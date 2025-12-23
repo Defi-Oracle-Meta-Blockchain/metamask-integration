@@ -1,0 +1,18 @@
+{
+  "chainId": "0x8a",
+  "chainName": "SMOM-DBIS-138",
+  "rpcUrls": [
+    "https://rpc-core.d-bis.org"
+  ],
+  "nativeCurrency": {
+    "name": "Ether",
+    "symbol": "ETH",
+    "decimals": 18
+  },
+  "blockExplorerUrls": [
+    "https://explorer.d-bis.org"
+  ],
+  "iconUrls": [
+    "https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png"
+  ]
+}

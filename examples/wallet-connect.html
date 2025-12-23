@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Wallet - ChainID 138</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .network-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .network-info h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: #333;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+            display: block;
+        }
+
+        .wallet-address {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            word-break: break-all;
+            display: none;
+        }
+
+        .wallet-address.show {
+            display: block;
+        }
+
+        .rpc-config {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 10px;
+            border: 1px solid #ffc107;
+        }
+
+        .rpc-config h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .rpc-config input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .rpc-config label {
+            color: #856404;
+            font-size: 12px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .metamask-install {
+            background: #fff3cd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #ffc107;
+        }
+
+        .metamask-install h3 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .metamask-install p {
+            color: #856404;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .metamask-install ol {
+            color: #856404;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .metamask-install li {
+            margin-bottom: 8px;
+        }
+
+        .install-button {
+            background: #f57c00;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 124, 0, 0.4);
+        }
+
+        .install-button:hover {
+            background: #e65100;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 124, 0, 0.6);
+        }
+
+        .install-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .install-button.secondary {
+            background: #6c757d;
+            box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+        }
+
+        .install-button.secondary:hover {
+            background: #5a6268;
+            box-shadow: 0 6px 20px rgba(108, 117, 125, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Connect Wallet</h1>
+        <p class="subtitle">Connect your wallet and add ChainID 138 network</p>
+
+        <div class="network-info">
+            <h3>Network Details</h3>
+            <div class="info-row">
+                <span class="info-label">Chain ID:</span>
+                <span class="info-value">138</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Network Name:</span>
+                <span class="info-value">SMOM-DBIS-138</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Currency Symbol:</span>
+                <span class="info-value">ETH</span>
+            </div>
+        </div>
+
+        <div id="metamaskInstall" class="metamask-install" style="display: none;">
+            <h3>🦊 MetaMask Required</h3>
+            <p><strong>MetaMask is not installed in your browser.</strong> To connect your wallet and add this network, you need to install MetaMask first.</p>
+            <ol>
+                <li>Click the "Install MetaMask" button below</li>
+                <li>Choose your browser (Chrome, Firefox, Edge, or Brave)</li>
+                <li>Click "Add to [Browser]" on the MetaMask website</li>
+                <li>Follow the setup instructions to create or import a wallet</li>
+                <li>Refresh this page after installation</li>
+            </ol>
+            <div class="install-links">
+                <a href="https://metamask.io/download/" target="_blank" class="install-button">Install MetaMask</a>
+                <a href="https://metamask.io/" target="_blank" class="install-button secondary">Visit MetaMask Website</a>
+                <button onclick="window.refreshDetection ? window.refreshDetection() : location.reload()" class="install-button secondary" style="margin-top: 10px;">🔄 Check Again / Refresh</button>
+            </div>
+        </div>
+
+        <div class="rpc-config">
+            <h4>⚠️ RPC Configuration</h4>
+            <label for="rpcUrl">RPC URL:</label>
+            <input type="text" id="rpcUrl" placeholder="http://your-rpc-endpoint:8545" value="http://192.168.11.250:8545">
+            <label for="blockExplorer">Block Explorer (optional):</label>
+            <input type="text" id="blockExplorer" placeholder="https://explorer.example.com">
+        </div>
+
+        <div class="button-group">
+            <button id="connectWallet">Connect Wallet</button>
+            <button id="addNetwork">Add Network to Wallet</button>
+        </div>
+
+        <div id="status" class="status"></div>
+        <div id="walletAddress" class="wallet-address"></div>
+    </div>
+
+    <script>
+        // Network configuration
+        const networkConfig = {
+            chainId: '0x8a', // 138 in hex
+            chainName: 'SMOM-DBIS-138',
+            nativeCurrency: {
+                name: 'Ether',
+                symbol: 'ETH',
+                decimals: 18
+            },
+            rpcUrls: [],
+            blockExplorerUrls: []
+        };
+
+        // DOM elements
+        const connectBtn = document.getElementById('connectWallet');
+        const addNetworkBtn = document.getElementById('addNetwork');
+        const statusDiv = document.getElementById('status');
+        const walletAddressDiv = document.getElementById('walletAddress');
+        const rpcUrlInput = document.getElementById('rpcUrl');
+        const blockExplorerInput = document.getElementById('blockExplorer');
+        const metamaskInstallDiv = document.getElementById('metamaskInstall');
+
+        // Check if MetaMask is installed
+        function checkMetaMask() {
+            // Check for window.ethereum (EIP-1193 provider)
+            if (typeof window.ethereum === 'undefined') {
+                // Show installation instructions
+                metamaskInstallDiv.style.display = 'block';
+                connectBtn.disabled = true;
+                addNetworkBtn.disabled = true;
+                showStatus('error', 'MetaMask is not installed. Please install MetaMask to continue.');
+                return false;
+            } else {
+                // Check if it's specifically MetaMask (has isMetaMask property)
+                const isMetaMask = window.ethereum.isMetaMask === true || 
+                                   (window.ethereum.providers && 
+                                    window.ethereum.providers.some(p => p.isMetaMask === true));
+                
+                // Hide installation instructions if MetaMask is available
+                metamaskInstallDiv.style.display = 'none';
+                connectBtn.disabled = false;
+                addNetworkBtn.disabled = false;
+                
+                // Clear any error messages if MetaMask is now detected
+                if (statusDiv.classList.contains('error') && 
+                    statusDiv.textContent.includes('MetaMask is not installed')) {
+                    clearStatus();
+                }
+                
+                return true;
+            }
+        }
+
+        // Show status message
+        function showStatus(type, message) {
+            statusDiv.className = `status ${type}`;
+            statusDiv.textContent = message;
+            statusDiv.style.display = 'block';
+        }
+
+        // Clear status
+        function clearStatus() {
+            statusDiv.style.display = 'none';
+            statusDiv.className = 'status';
+        }
+
+        // Update network config with user input
+        function updateNetworkConfig() {
+            const rpcUrl = rpcUrlInput.value.trim();
+            const blockExplorer = blockExplorerInput.value.trim();
+
+            if (!rpcUrl) {
+                showStatus('error', 'Please enter an RPC URL');
+                return false;
+            }
+
+            networkConfig.rpcUrls = [rpcUrl];
+            if (blockExplorer) {
+                networkConfig.blockExplorerUrls = [blockExplorer];
+            } else {
+                networkConfig.blockExplorerUrls = [];
+            }
+
+            return true;
+        }
+
+        // Connect wallet
+        async function connectWallet() {
+            clearStatus();
+
+            if (!checkMetaMask()) {
+                return;
+            }
+
+            if (!updateNetworkConfig()) {
+                return;
+            }
+
+            try {
+                showStatus('info', 'Requesting account access...');
+                
+                // Request account access
+                const accounts = await window.ethereum.request({
+                    method: 'eth_requestAccounts'
+                });
+
+                if (accounts.length > 0) {
+                    const address = accounts[0];
+                    walletAddressDiv.textContent = `Connected: ${address}`;
+                    walletAddressDiv.classList.add('show');
+                    showStatus('success', 'Wallet connected successfully!');
+                    
+                    // Check current chain
+                    const currentChainId = await window.ethereum.request({
+                        method: 'eth_chainId'
+                    });
+                    
+                    if (currentChainId === networkConfig.chainId) {
+                        showStatus('info', 'You are already connected to ChainID 138');
+                    }
+                }
+            } catch (error) {
+                console.error('Error connecting wallet:', error);
+                if (error.code === 4001) {
+                    showStatus('error', 'User rejected the connection request.');
+                } else {
+                    showStatus('error', `Error connecting wallet: ${error.message}`);
+                }
+            }
+        }
+
+        // Add network to wallet
+        async function addNetwork() {
+            clearStatus();
+
+            if (!checkMetaMask()) {
+                return;
+            }
+
+            if (!updateNetworkConfig()) {
+                return;
+            }
+
+            try {
+                showStatus('info', 'Adding network to wallet...');
+
+                // Try to add the network
+                await window.ethereum.request({
+                    method: 'wallet_addEthereumChain',
+                    params: [networkConfig]
+                });
+
+                showStatus('success', 'Network added successfully! You can now switch to it in MetaMask.');
+            } catch (error) {
+                console.error('Error adding network:', error);
+                
+                if (error.code === 4902) {
+                    // Network doesn't exist, try to add it
+                    try {
+                        await window.ethereum.request({
+                            method: 'wallet_addEthereumChain',
+                            params: [networkConfig]
+                        });
+                        showStatus('success', 'Network added successfully!');
+                    } catch (addError) {
+                        showStatus('error', `Error adding network: ${addError.message}`);
+                    }
+                } else if (error.code === -32602) {
+                    showStatus('error', 'Invalid network parameters. Please check your RPC URL.');
+                } else if (error.code === 4001) {
+                    showStatus('error', 'User rejected the network addition request.');
+                } else {
+                    showStatus('error', `Error: ${error.message}`);
+                }
+            }
+        }
+
+        // Event listeners
+        connectBtn.addEventListener('click', connectWallet);
+        addNetworkBtn.addEventListener('click', addNetwork);
+
+        // Check MetaMask on load
+        const hasMetaMask = checkMetaMask();
+        
+        if (hasMetaMask) {
+            // Listen for account changes
+            window.ethereum.on('accountsChanged', (accounts) => {
+                if (accounts.length > 0) {
+                    walletAddressDiv.textContent = `Connected: ${accounts[0]}`;
+                    walletAddressDiv.classList.add('show');
+                    showStatus('success', 'Wallet account changed');
+                } else {
+                    walletAddressDiv.classList.remove('show');
+                    showStatus('info', 'Wallet disconnected');
+                }
+            });
+
+            // Listen for chain changes
+            window.ethereum.on('chainChanged', (chainId) => {
+                if (chainId === networkConfig.chainId) {
+                    showStatus('success', 'Switched to ChainID 138 network!');
+                } else {
+                    showStatus('info', `Switched to chain: ${chainId}`);
+                }
+            });
+
+            // Auto-connect if already connected
+            if (window.ethereum.selectedAddress) {
+                walletAddressDiv.textContent = `Connected: ${window.ethereum.selectedAddress}`;
+                walletAddressDiv.classList.add('show');
+            }
+        }
+
+        // Check for MetaMask installation periodically (in case user installs it)
+        let checkInterval = setInterval(() => {
+            if (typeof window.ethereum !== 'undefined') {
+                const wasDisabled = connectBtn.disabled;
+                const wasShowingInstall = metamaskInstallDiv.style.display !== 'none';
+                
+                if (checkMetaMask() && (wasDisabled || wasShowingInstall)) {
+                    clearInterval(checkInterval);
+                    showStatus('success', 'MetaMask detected! You can now connect your wallet.');
+                }
+            }
+        }, 500);
+
+        // Add manual refresh button functionality
+        function refreshDetection() {
+            clearStatus();
+            const detected = checkMetaMask();
+            if (detected) {
+                showStatus('success', 'MetaMask is detected and ready to use!');
+            } else {
+                showStatus('info', 'Please make sure MetaMask is installed and enabled, then refresh this page.');
+            }
+        }
+
+        // Make refreshDetection available globally for the button
+        window.refreshDetection = refreshDetection;
+    </script>
+</body>
+</html>

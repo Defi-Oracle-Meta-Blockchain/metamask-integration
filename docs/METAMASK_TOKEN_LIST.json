@@ -1,0 +1,35 @@
+{
+  "name": "SMOM-DBIS-138 Token List",
+  "version": {
+    "major": 1,
+    "minor": 1,
+    "patch": 0
+  },
+  "timestamp": "2025-12-22T17:45:00.000Z",
+  "tokens": [
+    {
+      "chainId": 138,
+      "address": "0x3304b747e565a97ec8ac220b0b6a1f6ffdb837e6",
+      "name": "ETH/USD Price Feed",
+      "symbol": "ETH-USD",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png"
+    },
+    {
+      "chainId": 138,
+      "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png"
+    },
+    {
+      "chainId": 138,
+      "address": "0xf4BB2e28688e89fCcE3c0580D37d36A7672E8A9f",
+      "name": "Wrapped Ether v10",
+      "symbol": "WETH10",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png"
+    }
+  ]
+}
