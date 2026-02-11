@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@metamask/"],
+      "groupName": "MetaMask Snap packages",
+      "schedule": ["before 6am on monday"]
+    }
+  ],
+  "description": "Keep @metamask/snaps-sdk and related Snap packages up to date; run CI on dependency updates."
+}

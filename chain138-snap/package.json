@@ -1,0 +1,91 @@
+{
+  "name": "root",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "homepage": "https://github.com/MetaMask/template-snap-monorepo#readme",
+  "bugs": {
+    "url": "https://github.com/MetaMask/template-snap-monorepo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MetaMask/template-snap-monorepo.git"
+  },
+  "license": "(MIT-0 OR Apache-2.0)",
+  "author": "",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "allow-scripts": "pnpm exec allow-scripts",
+    "build": "pnpm -r run build",
+    "lint": "pnpm run lint:eslint && pnpm run lint:misc --check",
+    "lint:eslint": "eslint . --cache",
+    "lint:fix": "pnpm run lint:eslint --fix && pnpm run lint:misc --write",
+    "lint:misc": "prettier '**/*.json' '**/*.md' '**/*.yml' '!.yarnrc.yml' --ignore-path .gitignore --no-error-on-unmatched-pattern",
+    "start": "pnpm -r --parallel run start",
+    "test": "pnpm --filter snap run build && pnpm --filter snap run test",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@lavamoat/allow-scripts": "^3.4.2",
+    "@metamask/eslint-config": "^15.0.0",
+    "@metamask/eslint-config-browser": "^15.0.0",
+    "@metamask/eslint-config-jest": "^15.0.0",
+    "@metamask/eslint-config-nodejs": "^15.0.0",
+    "@metamask/eslint-config-typescript": "^15.0.0",
+    "@playwright/test": "^1.58.2",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-jest": "^28.8.3",
+    "eslint-plugin-jsdoc": "^50.2.4",
+    "eslint-plugin-n": "^17.23.2",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-promise": "^7.2.1",
+    "prettier": "^3.8.1",
+    "prettier-plugin-packagejson": "^3.0.0",
+    "sharp": "^0.34.5",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.54.0"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=18.6.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "gatsby",
+      "sharp"
+    ],
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "9",
+        "react": "18",
+        "@metamask/providers": "22",
+        "@metamask/snaps-controllers": "17",
+        "@typescript-eslint/eslint-plugin": "5",
+        "@typescript-eslint/parser": "5",
+        "eslint-plugin-jest": "28"
+      }
+    },
+    "overrides": {
+      "cookie": "^0.7.1",
+      "eslint-import-resolver-typescript": "^3.6.3",
+      "path-to-regexp@0.1.10": "^0.1.12",
+      "sharp": "^0.33.5",
+      "socket.io": "^4.8.1",
+      "ws": "^8.17.1",
+      "gatsby>eslint": "^7.32.0",
+      "eslint-config-react-app>eslint": "^7.32.0",
+      "eslint-plugin-flowtype>eslint": "^7.32.0"
+    }
+  },
+  "lavamoat": {
+    "allowScripts": {
+      "sharp": true
+    }
+  }
+}

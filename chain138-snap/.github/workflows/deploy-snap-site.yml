@@ -1,0 +1,49 @@
+# Build Snap companion site (pathPrefix /snap). Optional: set repository variable
+# SNAP_VERIFY_BASE_URL (e.g. https://explorer.d-bis.org) to run verify-snap-site-vmid5000.sh after build.
+# Optional: set secret GATSBY_SNAP_API_BASE_URL for production API in build.
+name: Deploy Snap Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/site/**'
+      - 'packages/snap/**'
+      - 'scripts/deploy-snap-site-to-vmid5000.sh'
+      - 'scripts/verify-snap-site-vmid5000.sh'
+      - '.github/workflows/deploy-snap-site.yml'
+  workflow_dispatch:
+
+env:
+  GATSBY_PATH_PREFIX: /snap
+
+jobs:
+  build-and-verify:
+    name: Build site and verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Enable pnpm
+        run: corepack enable && corepack prepare pnpm@9.15.0 --activate
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Snap site (pathPrefix /snap)
+        run: pnpm --filter site run build
+        env:
+          GATSBY_PATH_PREFIX: /snap
+          GATSBY_SNAP_API_BASE_URL: ${{ secrets.GATSBY_SNAP_API_BASE_URL }}
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: snap-site-${{ github.sha }}
+          path: packages/site/public/
+          retention-days: 7
+
+      - name: Verify deployed Snap site (smoke)
+        if: ${{ vars.SNAP_VERIFY_BASE_URL != '' && vars.SNAP_VERIFY_BASE_URL != null }}
+        run: ./scripts/verify-snap-site-vmid5000.sh "${{ vars.SNAP_VERIFY_BASE_URL }}"

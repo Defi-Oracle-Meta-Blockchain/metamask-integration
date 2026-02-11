@@ -1,0 +1,58 @@
+{
+  "name": "site",
+  "version": "0.1.0",
+  "private": true,
+  "license": "(MIT-0 OR Apache-2.0)",
+  "scripts": {
+    "allow-scripts": "pnpm --filter root run allow-scripts",
+    "prebuild": "node -e \"const fs=require('fs');const p=require('path');const d=p.join(__dirname,'static');if(!fs.existsSync(d))fs.mkdirSync(d,{recursive:true});const v=process.env.GATSBY_BUILD_SHA||process.env.GATSBY_APP_VERSION||'dev';fs.writeFileSync(p.join(d,'version.json'),JSON.stringify({version:v,buildTime:new Date().toISOString()}));\"",
+    "build": "GATSBY_TELEMETRY_DISABLED=1 gatsby build",
+    "clean": "rimraf public",
+    "lint": "pnpm run lint:eslint && pnpm run lint:misc --check",
+    "lint:eslint": "eslint . --cache",
+    "lint:fix": "pnpm run lint:eslint --fix && pnpm run lint:misc --write",
+    "lint:misc": "prettier '**/*.json' '**/*.md' '**/*.yml' '!.yarnrc.yml' --ignore-path ../../.gitignore --no-error-on-unmatched-pattern",
+    "start": "GATSBY_TELEMETRY_DISABLED=1 gatsby develop"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@metamask/providers": "^22.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-is": "^18.3.1",
+    "styled-components": "^5.3.11"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
+    "@testing-library/dom": "^8.20.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/react": "^18.2.4",
+    "@types/react-dom": "^18.2.4",
+    "@types/styled-components": "^5.1.36",
+    "caniuse-lite": "^1.0.30001767",
+    "eslint": "^9.39.2",
+    "gatsby": "^5.16.0",
+    "gatsby-plugin-manifest": "^5.16.0",
+    "gatsby-plugin-styled-components": "^6.14.0",
+    "gatsby-plugin-svgr": "3.0.0-beta.0",
+    "rimraf": "^5.0.5",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=18.6.0"
+  }
+}

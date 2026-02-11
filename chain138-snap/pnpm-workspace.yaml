@@ -1,0 +1,3 @@
+# pnpm workspace (default package manager). Yarn is also supported.
+packages:
+  - 'packages/*'
