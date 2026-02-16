@@ -2,9 +2,11 @@
 
 This Snap provides **Chain 138** (DeFi Oracle Meta Mainnet) and **ALL Mainnet** (651940) support in MetaMask: network params, token list, market data (prices), swap quotes, and CCIP bridge routes. It reads configuration from a **token-aggregation** (or compatible) API.
 
+**Why we built it:** MetaMask already supports Chain 138 as a custom EVM network (add via RPC), but native **Swaps**, **Portfolio Bridge**, and **USD pricing** do not include Chain 138 (Consensys-controlled). No public Snap existed for swap/bridge/pricing on 138. This Snap gives in-wallet swap quotes, bridge routes, and market data by calling our APIs, so users get feature parity without waiting for Consensys. See [docs/04-configuration/CHAIN138_WALLET_ECOSYSTEM_AND_RATIONALE.md](../../docs/04-configuration/CHAIN138_WALLET_ECOSYSTEM_AND_RATIONALE.md#2-why-we-created-the-metamask-snap) for full rationale.
+
 For detailed development and testing, see [TESTING_INSTRUCTIONS.md](TESTING_INSTRUCTIONS.md). For implementation phases and backend APIs, see [docs/04-configuration/metamask/SNAP_IMPLEMENTATION_ROADMAP.md](../../docs/04-configuration/metamask/SNAP_IMPLEMENTATION_ROADMAP.md) in the repo root.
 
-**Integrators:** Market data, swap quote, and bridge route features require the dApp to pass `apiBaseUrl` (the token-aggregation service base URL) when invoking the Snap. Set `GATSBY_SNAP_API_BASE_URL` on the companion site so the demo page works.
+**Integrators:** Production Snap ID: **`npm:chain138-snap`**. Market data, swap quote, and bridge route features require the dApp to pass `apiBaseUrl` (the token-aggregation service base URL) when invoking the Snap. You may also pass optional URLs: `networksUrl`, `tokenListUrl`, `bridgeListUrl`. Set `GATSBY_SNAP_API_BASE_URL` on the companion site so the demo page works. For production, set `SNAP_ORIGIN=npm:chain138-snap` in the site env so the companion uses the published Snap.
 
 This Snap targets the **latest stable MetaMask Snap SDK** (`@metamask/snaps-sdk`).
 

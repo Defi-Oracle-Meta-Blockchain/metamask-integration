@@ -20,7 +20,7 @@
 
 ## CI
 
-GitHub Actions use **pnpm** by default: `corepack prepare pnpm@9.15.0 --activate` then `pnpm install --frozen-lockfile` and `pnpm run build` / `pnpm run lint` / `pnpm --filter snap run test`. **Before the first CI run** (or after adding dependencies), run `pnpm install` locally and commit `pnpm-lock.yaml` so CI has a lockfile.
+GitHub Actions use **pnpm** by default: `corepack prepare pnpm@9.15.0 --activate` then `pnpm install --frozen-lockfile` and `pnpm run build` / `pnpm run lint` / `pnpm --filter chain138-snap run test`. **Before the first CI run** (or after adding dependencies), run `pnpm install` locally and commit `pnpm-lock.yaml` so CI has a lockfile.
 
 ## Recommendations
 

@@ -365,7 +365,7 @@ Use this checklist for full manual E2E testing:
 2. **Publish package:** Publish the Snap package to npm (e.g. from `packages/snap`) so `source.location.npm` in `snap.manifest.json` is valid.
 3. **Snap directory:** Follow the [MetaMask Snap publishing guide](https://docs.metamask.io/snaps/how-to/publish-a-snap/) to register the Snap (package name or bundle URL, description, category, permissions).
 
-**Production use:** After the Snap is published, the production Snap ID will be the npm package name (e.g. `npm:snap` or `npm:@your-org/chain138-snap`). For market data, swap quote, and bridge routes to work, dApps (and the companion site) must pass `apiBaseUrl` (your token-aggregation service URL) or the optional URLs when invoking the Snap. Document this for integrators; see "API calls failing" in Troubleshooting.
+**Production use:** After the Snap is published, the production Snap ID is **`npm:chain138-snap`**. For market data, swap quote, and bridge routes to work, dApps (and the companion site) must pass `apiBaseUrl` (your token-aggregation service URL) or the optional URLs (`networksUrl`, `tokenListUrl`, `bridgeListUrl`) when invoking the Snap. See "Integrators" in the repo README and "API calls failing" in Troubleshooting.
 
 ---
 

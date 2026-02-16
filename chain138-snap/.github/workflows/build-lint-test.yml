@@ -93,7 +93,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Run Snap unit tests
-        run: pnpm --filter snap run test
+        run: pnpm --filter chain138-snap run test
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps
       - name: Run Playwright E2E (companion site)

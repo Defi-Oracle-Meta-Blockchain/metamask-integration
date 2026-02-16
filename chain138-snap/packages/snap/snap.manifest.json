@@ -4,15 +4,15 @@
   "proposedName": "Chain 138",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+    "url": "https://github.com/bis-innovations/chain138-snap.git"
   },
   "source": {
-    "shasum": "gLlFZx1q+vaYM4tYKOg0hHlIDB9p6GdoZ4jw3ZU7jYg=",
+    "shasum": "BP9yQblP1R+fSCxYQjdV965YIDdal9Xx3ZiSTbmJYik=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "snap",
+        "packageName": "chain138-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }

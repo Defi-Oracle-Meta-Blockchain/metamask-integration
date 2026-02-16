@@ -12,6 +12,6 @@ test.describe('Chain 138 Snap companion site', () => {
   test('page has Snap-related content', async ({ page }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
     const body = page.locator('body');
-    await expect(body).toContainText(/Connect|template-snap|Get started|Snap|Install|Reconnect/i, { timeout: 30_000 });
+    await expect(body).toContainText(/Connect|Chain 138|Get started|Snap|Install|Reconnect/i, { timeout: 30_000 });
   });
 });

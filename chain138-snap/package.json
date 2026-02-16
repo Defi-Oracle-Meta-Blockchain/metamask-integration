@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "description": "",
-  "homepage": "https://github.com/MetaMask/template-snap-monorepo#readme",
+  "homepage": "https://github.com/bis-innovations/chain138-snap#readme",
   "bugs": {
-    "url": "https://github.com/MetaMask/template-snap-monorepo/issues"
+    "url": "https://github.com/bis-innovations/chain138-snap/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MetaMask/template-snap-monorepo.git"
+    "url": "git+https://github.com/bis-innovations/chain138-snap.git"
   },
   "license": "(MIT-0 OR Apache-2.0)",
   "author": "",
@@ -24,7 +24,7 @@
     "lint:fix": "pnpm run lint:eslint --fix && pnpm run lint:misc --write",
     "lint:misc": "prettier '**/*.json' '**/*.md' '**/*.yml' '!.yarnrc.yml' --ignore-path .gitignore --no-error-on-unmatched-pattern",
     "start": "pnpm -r --parallel run start",
-    "test": "pnpm --filter snap run build && pnpm --filter snap run test",
+    "test": "pnpm --filter chain138-snap run build && pnpm --filter chain138-snap run test",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
   },
