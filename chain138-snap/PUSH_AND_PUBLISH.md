@@ -1,34 +1,45 @@
 # Push to GitHub and publish to npm
 
-Use this when the Snap lives in **https://github.com/bis-innovations/chain138-snap** and you are ready to push and publish.
+The Snap repo is **https://github.com/bis-innovations/chain138-snap**.
 
-## 1. Push to GitHub (first-time setup)
+## 1. Push to GitHub
 
-From the **chain138-snap** directory (or the repo root if this monorepo is the whole repo):
+This Snap lives inside the **metamask-integration** repo as `chain138-snap/`. To push updates to the dedicated Snap repo:
+
+From the **metamask-integration** repo root (parent of `chain138-snap/`):
 
 ```bash
-# If this folder is the repo to push (you cloned/copied it as chain138-snap):
-git remote add origin https://github.com/bis-innovations/chain138-snap.git
-git branch -M main
-git push -u origin main
+# One-time: add the Snap repo as a remote (if not already added)
+git remote add chain138-snap https://github.com/bis-innovations/chain138-snap.git
+
+# After making changes under chain138-snap/, commit then:
+git add chain138-snap/
+git commit -m "your message"
+git subtree push --prefix=chain138-snap chain138-snap main
 ```
 
-If this directory is part of a larger repo (e.g. `proxmox`), you can either push only the Snap subtree to **chain138-snap** (e.g. `git subtree push` or a new clone containing just the Snap), or push the whole repo and then point the Snap’s `repository` to a dedicated Snap repo. For a **standalone** Snap repo: create **bis-innovations/chain138-snap** on GitHub, then from a clone that contains only this Snap monorepo (e.g. copy `metamask-integration/chain138-snap` contents into a new repo): run the `git remote add origin` / `git push` commands above.
+The remote **chain138-snap** and branch **main** are already set up; the initial push has been done.
 
 ## 2. Publish Snap package to npm
 
 From the **chain138-snap** monorepo root:
 
 ```bash
-# Build (updates manifest shasum)
+# 1. Build (updates manifest shasum)
 pnpm run build
 
-# Publish the Snap package (requires npm login)
-cd packages/snap && npm publish --access public
-# Or: pnpm publish --no-git-checks --access public
+# 2. (Optional) Use token from .env for publish (2FA bypass)
+# Add NPM_ACCESS_TOKEN to .env (see .env.example). Use a Granular Access Token with
+# "Publish" and "Bypass 2FA for publish" at https://www.npmjs.com/settings/~/tokens
+
+# 3. Publish (uses NPM_ACCESS_TOKEN from .env if set)
+# Run from the chain138-snap monorepo root (not from the parent proxmox repo):
+pnpm run publish:snap
+# If you're in the proxmox repo root: cd metamask-integration/chain138-snap && pnpm run publish:snap
+# Or manually: cd packages/snap && npm login && npm publish --access public
 ```
 
-Production Snap ID will be **`npm:chain138-snap`**.
+Production Snap ID will be **`npm:chain138-snap`**. After publish, the package will appear at https://www.npmjs.com/package/chain138-snap.
 
 ## 3. Submit for allowlist
 

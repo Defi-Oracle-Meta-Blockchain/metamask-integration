@@ -1,12 +1,65 @@
-# TypeScript Example Snap
+# chain138-snap
 
-This snap demonstrates how to develop a snap with TypeScript. It is a simple
-snap that displays a confirmation dialog when the `hello` JSON-RPC method is
-called.
+**Chain 138 Snap** adds [DeFi Oracle Meta Mainnet](https://chainlist.org/chain/138) (ChainID 138) and **ALL Mainnet** (651940) support inside MetaMask: network params, token list, market data, swap quotes, and CCIP bridge routes.
 
-## Testing
+MetaMask already supports Chain 138 as a custom EVM network, but native **Swaps**, **Portfolio Bridge**, and **USD pricing** do not include Chain 138. This Snap provides in-wallet swap quotes, bridge routes, and market data by calling your token-aggregation (or compatible) API.
 
-The snap comes with some basic tests, to demonstrate how to write tests for
-snaps. To test the snap, run **pnpm run test** (or **yarn test**) from the repo root, or `pnpm run test` / `yarn test` in this directory. This will use
-[`@metamask/snaps-jest`](https://github.com/MetaMask/snaps/tree/main/packages/snaps-jest)
-to run the tests in `src/index.test.ts`.
+## Install
+
+1. Install [MetaMask](https://metamask.io/) (extension or mobile).
+2. From a dApp or the [companion site](https://github.com/bis-innovations/chain138-snap), connect and add the Snap using the ID below.
+
+**Snap ID:** `npm:chain138-snap`
+
+## Usage
+
+dApps invoke the Snap via the MetaMask provider:
+
+```javascript
+// Connect / install the Snap (your dApp typically does this once)
+await ethereum.request({
+  method: 'wallet_requestSnaps',
+  params: {
+    'npm:chain138-snap': {},
+  },
+});
+
+// Call a method (e.g. get networks or market data)
+const result = await ethereum.request({
+  method: 'wallet_invokeSnap',
+  params: {
+    snapId: 'npm:chain138-snap',
+    request: {
+      method: 'get_networks',
+      params: { apiBaseUrl: 'https://your-token-aggregation-api.com' },
+    },
+  },
+});
+```
+
+For **market data**, **swap quotes**, and **bridge routes**, the dApp must pass `apiBaseUrl` (your token-aggregation service base URL) in the request params. Optional URL params: `networksUrl`, `tokenListUrl`, `bridgeListUrl`.
+
+### RPC methods
+
+| Method | Description |
+|--------|-------------|
+| `hello` | Basic test; returns a greeting. |
+| `get_networks` | Full EIP-3085 chain params (Chain 138, Ethereum, ALL Mainnet). |
+| `get_chain138_config` | Chain 138 config from API. |
+| `get_chain138_market_chains` | Market chains list. |
+| `get_token_list` / `get_token_list_url` | Token list (optional `chainId`). |
+| `get_oracles` | Oracles config. |
+| `show_dynamic_info` | In-Snap dialog with networks and token list URL. |
+| `get_market_summary` / `show_market_data` | Tokens and USD prices. |
+| `get_bridge_routes` / `show_bridge_routes` | CCIP bridge routes. |
+| `get_swap_quote` / `show_swap_quote` | Swap quote (requires `tokenIn`, `tokenOut`, `amountIn`). |
+
+## Repository and docs
+
+- **Source:** [github.com/bis-innovations/chain138-snap](https://github.com/bis-innovations/chain138-snap)
+- **Integrator guide:** [INTEGRATORS.md](https://github.com/bis-innovations/chain138-snap/blob/main/INTEGRATORS.md) (Snap ID, `apiBaseUrl`, optional URLs)
+- **Testing / publishing:** [TESTING_INSTRUCTIONS.md](https://github.com/bis-innovations/chain138-snap/blob/main/TESTING_INSTRUCTIONS.md), [PUSH_AND_PUBLISH.md](https://github.com/bis-innovations/chain138-snap/blob/main/PUSH_AND_PUBLISH.md)
+
+## License
+
+MIT-0 OR Apache-2.0

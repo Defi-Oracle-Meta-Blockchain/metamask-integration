@@ -26,7 +26,8 @@
     "start": "pnpm -r --parallel run start",
     "test": "pnpm --filter chain138-snap run build && pnpm --filter chain138-snap run test",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "publish:snap": "bash scripts/publish-snap-to-npm.sh"
   },
   "devDependencies": {
     "@lavamoat/allow-scripts": "^3.4.2",

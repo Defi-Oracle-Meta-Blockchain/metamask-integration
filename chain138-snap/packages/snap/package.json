@@ -1,6 +1,6 @@
 {
   "name": "chain138-snap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Chain 138 (DeFi Oracle Meta Mainnet) and ALL Mainnet Snap: networks, token list, market data, swap quotes, CCIP bridge routes for MetaMask.",
   "repository": {
     "type": "git",

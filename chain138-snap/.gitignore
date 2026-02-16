@@ -71,6 +71,10 @@ playwright/.cache/
 .env
 .env.test
 
+# npm token (may be written by publish-snap-to-npm.sh)
+.npmrc
+packages/snap/.npmrc
+
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
