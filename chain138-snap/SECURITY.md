@@ -2,8 +2,8 @@
 
 ## HTTPS only
 
-- The Snap companion site is intended to be served over **HTTPS** (e.g. https://explorer.d-bis.org/snap/). Avoid mixed content: ensure all API and asset URLs use HTTPS when the page is loaded over HTTPS.
-- Explorer and token-aggregation API should be HTTPS in production.
+- The Snap companion site is intended to be served over **HTTPS** in production. Avoid mixed content: ensure all API and asset URLs use HTTPS when the page is loaded over HTTPS.
+- Your token-aggregation API should use HTTPS in production.
 
 ## Token-aggregation API (public)
 

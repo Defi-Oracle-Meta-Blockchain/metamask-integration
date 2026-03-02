@@ -4,6 +4,11 @@ import { StrictMode } from 'react';
 import { App } from './src/App';
 import { Root } from './src/Root';
 
+/**
+ *
+ * @param options0
+ * @param options0.element
+ */
 export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   element,
 }) => (
@@ -12,6 +17,11 @@ export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   </StrictMode>
 );
 
+/**
+ *
+ * @param options0
+ * @param options0.element
+ */
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
   element,
 }) => <App>{element}</App>;

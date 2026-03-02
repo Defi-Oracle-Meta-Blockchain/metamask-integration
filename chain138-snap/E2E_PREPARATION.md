@@ -12,22 +12,14 @@ The Snap and companion site call the token-aggregation API for networks, token l
 
 1. **Prerequisites**
    - Node.js 20+
-   - PostgreSQL 14+ with TimescaleDB
-   - RPC URLs for Chain 138 and 651940 (e.g. from `.env.example`)
+   - PostgreSQL 14+ with TimescaleDB (if your token-aggregation service uses it)
+   - RPC URLs for Chain 138 and 651940 (e.g. from your API `.env.example`)
 
 2. **Setup**
-   ```bash
-   cd smom-dbis-138/services/token-aggregation
-   cp .env.example .env
-   # Edit .env: set DATABASE_URL, CHAIN_138_RPC_URL, CHAIN_651940_RPC_URL
-   ```
+   - Clone or use your token-aggregation service repo. Copy `.env.example` to `.env` and set `DATABASE_URL`, `CHAIN_138_RPC_URL`, `CHAIN_651940_RPC_URL` (or equivalent).
 
 3. **Database**
-   - Apply migrations (see `QUICK_START.md` or `QUICK_START_COMPLETE.md` in that repo), e.g.:
-   ```bash
-   psql $DATABASE_URL -f ../../explorer-monorepo/backend/database/migrations/0011_token_aggregation_schema.up.sql
-   # plus 0012 if used
-   ```
+   - Apply migrations as required by your token-aggregation service (see that service’s QUICK_START or migration docs).
 
 4. **Run**
    ```bash
@@ -41,10 +33,10 @@ The Snap and companion site call the token-aggregation API for networks, token l
 ### Option B: Docker
 
 ```bash
-cd smom-dbis-138/services/token-aggregation
+# From your token-aggregation service directory
 # Ensure .env exists with DATABASE_URL etc.
 docker-compose up -d
-# API on http://localhost:3000
+# API on http://localhost:3000 (or the port your service uses)
 ```
 
 ### Option C: Deployed / staging
@@ -64,8 +56,9 @@ Use your deployed token-aggregation base URL (e.g. `https://your-token-aggregati
 The companion site passes `apiBaseUrl` to the Snap so that market data, bridge, and swap quote cards work.
 
 1. **Create env file**
+
    ```bash
-   cd metamask-integration/chain138-snap/packages/site
+   cd packages/site
    cp .env.production.dist .env
    # or .env.production for production build
    ```
@@ -73,7 +66,7 @@ The companion site passes `apiBaseUrl` to the Snap so that market data, bridge, 
 2. **Set API base URL**
    - Local token-aggregation: `GATSBY_SNAP_API_BASE_URL=http://localhost:3000`
    - Deployed: `GATSBY_SNAP_API_BASE_URL=https://your-token-aggregation-api.com`  
-   Do not add a trailing slash.
+     Do not add a trailing slash.
 
 3. **Restart the site** if it is already running so the variable is picked up (Gatsby reads env at build/start).
 
@@ -81,10 +74,9 @@ The companion site passes `apiBaseUrl` to the Snap so that market data, bridge, 
 
 ## 3. Run Snap + site
 
-From the Chain 138 Snap monorepo root:
+From the Chain 138 Snap repo root:
 
 ```bash
-cd metamask-integration/chain138-snap
 pnpm run start
 ```
 
@@ -104,7 +96,6 @@ Use the [E2E testing checklist (MetaMask Flask)](TESTING_INSTRUCTIONS.md#e2e-tes
 To run the automated E2E tests (site loads and shows Snap Connect UI):
 
 ```bash
-cd metamask-integration/chain138-snap
 pnpm install
 npx playwright install
 pnpm run test:e2e
@@ -120,16 +111,14 @@ pnpm run test:e2e
 
 ## 6. Run E2E against deployed Snap site
 
-To run Playwright (or manual checks) against the **deployed** Snap site (e.g. https://explorer.d-bis.org/snap/):
+To run Playwright (or manual checks) against a **deployed** Snap companion site (e.g. https://yoursite.com/snap/):
 
 1. **Playwright against a URL:** Set the base URL and run tests (if your Playwright config supports it), e.g.:
-   - Add a second config or override in `playwright.config.ts`: `baseURL: process.env.SNAP_BASE_URL || 'http://localhost:8000'`.
-   - Run: `SNAP_BASE_URL=https://explorer.d-bis.org/snap pnpm run test:e2e` (after adding `baseURL` to the config).
-   - Or run the manual E2E checklist in TESTING_INSTRUCTIONS.md while opening https://explorer.d-bis.org/snap/ in the browser.
+   - Add a config or override in `playwright.config.ts`: `baseURL: process.env.SNAP_BASE_URL || 'http://localhost:8000'`.
+   - Run: `SNAP_BASE_URL=https://yoursite.com/snap pnpm run test:e2e` (after adding `baseURL` to the config).
+   - Or run the manual E2E checklist in TESTING_INSTRUCTIONS.md while opening your deployed site URL in the browser.
 
-2. **Environment:** The deployed site must be built with `GATSBY_SNAP_API_BASE_URL` set to the production token-aggregation URL for Market, Bridge, and Swap cards to work. If not set, those cards will show "Set GATSBY_SNAP_API_BASE_URL".
-
-3. **CI:** You can run `scripts/verify-snap-site-vmid5000.sh https://explorer.d-bis.org` in CI as a smoke test after deploy (no MetaMask required). Set repo variable `SNAP_VERIFY_BASE_URL` to enable the verify step in `.github/workflows/deploy-snap-site.yml`.
+2. **Environment:** The deployed site must be built with `GATSBY_SNAP_API_BASE_URL` set to your token-aggregation URL for Market, Bridge, and Swap cards to work. If not set, those cards will show "Set GATSBY_SNAP_API_BASE_URL".
 
 ---
 

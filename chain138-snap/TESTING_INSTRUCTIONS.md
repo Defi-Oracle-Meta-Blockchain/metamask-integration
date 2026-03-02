@@ -3,6 +3,8 @@
 **Date:** 2026-01-30  
 **Status:** Built and ready for testing
 
+**Thorough pre-publish testing:** For a complete pass before every npm publish (including **all logos/images**, every RPC method, companion site, Send page, production-like test, and recommendations), use **[docs/PRE_PUBLISH_TESTING.md](docs/PRE_PUBLISH_TESTING.md)**.
+
 ---
 
 ## Prerequisites
@@ -12,10 +14,12 @@
    - Install as separate browser extension (won't conflict with regular MetaMask)
 
 2. **Snap Development Server Running**
+
    ```bash
-   cd metamask-integration/chain138-snap
    pnpm run start
    ```
+
+   (From the repo root.)
    (Or use **yarn start** if you prefer Yarn; see [PACKAGE_MANAGER.md](PACKAGE_MANAGER.md).)
    - Server will start on http://localhost:8000
    - Keep this terminal open
@@ -81,7 +85,9 @@ await ethereum.request({
 **Optional:** You can pass `networksUrl` instead of (or without) `apiBaseUrl` to fetch networks from a JSON URL (e.g. GitHub raw):
 
 ```javascript
-params: { networksUrl: 'https://raw.githubusercontent.com/org/repo/main/networks.json' }
+params: {
+  networksUrl: 'https://raw.githubusercontent.com/org/repo/main/networks.json';
+}
 ```
 
 #### Test `get_chain138_config`
@@ -191,7 +197,7 @@ params: { tokenListUrl: 'https://raw.githubusercontent.com/org/repo/main/token-l
 
 #### Test `get_bridge_routes`
 
-Requires `apiBaseUrl` or `bridgeListUrl`. Returns CCIP bridge routes (WETH9 / WETH10) and Chain 138 bridge addresses.
+Requires `apiBaseUrl` or `bridgeListUrl`. Returns bridge routes: CCIP (WETH9/WETH10) and, when configured, Trustless (Lockbox on 138) and Chain 138 bridge addresses.
 
 ```javascript
 await ethereum.request({
@@ -212,7 +218,7 @@ await ethereum.request({
 
 #### Test `show_bridge_routes`
 
-Requires `apiBaseUrl` or `bridgeListUrl`. Opens a Snap dialog with bridge route summary (WETH9/WETH10 → Ethereum Mainnet).
+Requires `apiBaseUrl` or `bridgeListUrl`. Opens a Snap dialog with bridge route summary: CCIP (WETH9/WETH10) and Trustless (Lockbox) → Ethereum Mainnet.
 
 ```javascript
 await ethereum.request({
@@ -284,7 +290,7 @@ Use this checklist for full manual E2E testing:
 
 1. **Environment**
    - [ ] MetaMask Flask installed
-   - [ ] Snap dev server running: `pnpm run start` (or `yarn start`) in `metamask-integration/chain138-snap`
+   - [ ] Snap dev server running: `pnpm run start` (or `yarn start`) in the repo root
    - [ ] For API-dependent tests: token-aggregation service reachable. Set `apiBaseUrl` to your deployment (e.g. `https://your-token-aggregation-api.com`) or a local/staging URL (e.g. `http://localhost:3000` if running token-aggregation locally).
 
 2. **Install Snap**
@@ -305,7 +311,7 @@ Use this checklist for full manual E2E testing:
 4. **Companion site cards**
    - [ ] Set `GATSBY_SNAP_API_BASE_URL` in `.env` (copy from `.env.production.dist` and fill) so the site passes apiBaseUrl to the Snap.
    - [ ] **Market data:** "Show market data" opens Snap dialog; "Fetch market summary" displays tokens/prices below.
-   - [ ] **Bridge:** "Show bridge routes" opens Snap dialog with CCIP routes.
+   - [ ] **Bridge:** "Show bridge routes" opens Snap dialog with CCIP and Trustless routes.
    - [ ] **Swap quote:** Enter token In/Out addresses and amount (raw), then "Get quote" shows amountOut; "Show quote in Snap" opens dialog.
 
 ---
@@ -343,6 +349,7 @@ Use this checklist for full manual E2E testing:
 
 **Checklist before publishing:**
 
+- [ ] **Thorough test:** Complete [docs/PRE_PUBLISH_TESTING.md](docs/PRE_PUBLISH_TESTING.md) (build, logos/images, all RPC methods, companion site, Send page, production-like, final sign-off).
 - [ ] All manual E2E checklist items above completed and passing.
 - [ ] Token-aggregation (or your API) deployed and stable; production `apiBaseUrl` known.
 - [ ] Snap built with no errors; `prepublishOnly` has run (updates manifest shasum).
@@ -377,7 +384,7 @@ Use this checklist for full manual E2E testing:
 - ✅ Token list and token list URL (`get_token_list`, `get_token_list_url`)
 - ✅ Market data: `get_market_summary` (tokens with prices), `show_market_data` (dialog)
 - ✅ Oracles config (`get_oracles`), dynamic info dialog (`show_dynamic_info`)
-- ✅ Bridge routes (`get_bridge_routes`, `show_bridge_routes`) when bridge API is available
+- ✅ Bridge routes (`get_bridge_routes`, `show_bridge_routes`) — CCIP and Trustless — when bridge API is available
 - ✅ Swap quote (`get_swap_quote`, `show_swap_quote`) when quote API is available
 
 ---

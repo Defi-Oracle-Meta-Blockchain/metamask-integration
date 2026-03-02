@@ -1,6 +1,6 @@
 # chain138-snap
 
-**Chain 138 Snap** adds [DeFi Oracle Meta Mainnet](https://chainlist.org/chain/138) (ChainID 138) and **ALL Mainnet** (651940) support inside MetaMask: network params, token list, market data, swap quotes, and CCIP bridge routes.
+**Chain 138 Snap** adds [DeFi Oracle Meta Mainnet](https://chainlist.org/chain/138) (ChainID 138) and **ALL Mainnet** (651940) support inside MetaMask: network params, token list, market data, swap quotes, and bridge routes (CCIP and Trustless).
 
 MetaMask already supports Chain 138 as a custom EVM network, but native **Swaps**, **Portfolio Bridge**, and **USD pricing** do not include Chain 138. This Snap provides in-wallet swap quotes, bridge routes, and market data by calling your token-aggregation (or compatible) API.
 
@@ -41,18 +41,18 @@ For **market data**, **swap quotes**, and **bridge routes**, the dApp must pass 
 
 ### RPC methods
 
-| Method | Description |
-|--------|-------------|
-| `hello` | Basic test; returns a greeting. |
-| `get_networks` | Full EIP-3085 chain params (Chain 138, Ethereum, ALL Mainnet). |
-| `get_chain138_config` | Chain 138 config from API. |
-| `get_chain138_market_chains` | Market chains list. |
-| `get_token_list` / `get_token_list_url` | Token list (optional `chainId`). |
-| `get_oracles` | Oracles config. |
-| `show_dynamic_info` | In-Snap dialog with networks and token list URL. |
-| `get_market_summary` / `show_market_data` | Tokens and USD prices. |
-| `get_bridge_routes` / `show_bridge_routes` | CCIP bridge routes. |
-| `get_swap_quote` / `show_swap_quote` | Swap quote (requires `tokenIn`, `tokenOut`, `amountIn`). |
+| Method                                     | Description                                                    |
+| ------------------------------------------ | -------------------------------------------------------------- |
+| `hello`                                    | Basic test; returns a greeting.                                |
+| `get_networks`                             | Full EIP-3085 chain params (Chain 138, Ethereum, ALL Mainnet). |
+| `get_chain138_config`                      | Chain 138 config from API.                                     |
+| `get_chain138_market_chains`               | Market chains list.                                            |
+| `get_token_list` / `get_token_list_url`    | Token list (optional `chainId`).                               |
+| `get_oracles`                              | Oracles config.                                                |
+| `show_dynamic_info`                        | In-Snap dialog with networks and token list URL.               |
+| `get_market_summary` / `show_market_data`  | Tokens and USD prices.                                         |
+| `get_bridge_routes` / `show_bridge_routes` | CCIP and Trustless bridge routes.                              |
+| `get_swap_quote` / `show_swap_quote`       | Swap quote (requires `tokenIn`, `tokenOut`, `amountIn`).       |
 
 ## Repository and docs
 

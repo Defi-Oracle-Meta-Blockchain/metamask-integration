@@ -1,8 +1,17 @@
 import { useRequest } from './useRequest';
 import { defaultSnapOrigin } from '../config';
 
+/**
+ *
+ */
 export type InvokeSnapParams = {
+  /**
+   *
+   */
   method: string;
+  /**
+   *
+   */
   params?: Record<string, unknown>;
 };
 

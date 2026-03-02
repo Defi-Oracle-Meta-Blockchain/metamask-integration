@@ -18,4 +18,4 @@ Before submitting the Chain 138 Snap for MetaMask allowlisting, confirm:
 - [x] No `console` logs, to-do comments, or unused permissions in Snap code.
 - [x] Security: CI runs MetaMask Security Code Scanner (`.github/workflows/security-code-scanner.yml`). Optionally run [Snapper](https://docs.metamask.io/snaps/how-to/get-allowlisted/) locally before submission.
 
-After publishing to npm, submit via the [MetaMask Snaps Directory Information form](https://docs.metamask.io/snaps/how-to/get-allowlisted/#1-submit-your-snap).
+**Submitted** to the MetaMask Snaps Directory; pending review. For future versions, use the [MetaMask Snaps Directory Information Update form](https://docs.metamask.io/snaps/how-to/get-allowlisted/#5-update-your-snap).

@@ -36,9 +36,17 @@ const RightContainer = styled.div`
   align-items: center;
 `;
 
+/**
+ *
+ * @param options0
+ * @param options0.handleToggleClick
+ */
 export const Header = ({
   handleToggleClick,
 }: {
+  /**
+   *
+   */
   handleToggleClick: () => void;
 }) => {
   const theme = useTheme();
@@ -47,7 +55,7 @@ export const Header = ({
     <HeaderWrapper>
       <LogoWrapper>
         <SnapLogo color={theme.colors.icon?.default} size={36} />
-        <Title>template-snap</Title>
+        <Title>Chain 138 Snap</Title>
       </LogoWrapper>
       <RightContainer>
         <Toggle

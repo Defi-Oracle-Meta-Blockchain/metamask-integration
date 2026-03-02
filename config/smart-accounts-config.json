@@ -1,0 +1,33 @@
+{
+  "chainId": 138,
+  "chainName": "SMOM-DBIS-138",
+  "rpcUrl": "https://rpc.d-bis.org",
+  "explorerUrl": "https://explorer.d-bis.org",
+  "entryPointAddress": "",
+  "accountFactoryAddress": "",
+  "paymasterAddress": "",
+  "deployment": {
+    "entryPoint": {
+      "address": "",
+      "transactionHash": "",
+      "blockNumber": 0
+    },
+    "accountFactory": {
+      "address": "",
+      "transactionHash": "",
+      "blockNumber": 0
+    },
+    "paymaster": {
+      "address": "",
+      "transactionHash": "",
+      "blockNumber": 0,
+      "enabled": false
+    }
+  },
+  "features": {
+    "delegation": true,
+    "advancedPermissions": true,
+    "gasAbstraction": false,
+    "userOperations": true
+  }
+}

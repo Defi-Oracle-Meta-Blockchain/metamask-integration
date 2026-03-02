@@ -2,6 +2,8 @@
 
 Use this checklist to complete **manual** E2E verification. Covers Snap install, all RPC methods, and companion site cards.
 
+**For thorough pre-publish testing** (logos/images, every asset, production-like test, recommendations): use **[docs/PRE_PUBLISH_TESTING.md](docs/PRE_PUBLISH_TESTING.md)**.
+
 ## Prerequisites
 
 - [ ] MetaMask Flask installed: https://metamask.io/flask/
@@ -29,16 +31,24 @@ Use this checklist to complete **manual** E2E verification. Covers Snap install,
 - [ ] `get_bridge_routes`, `show_bridge_routes` (apiBaseUrl or bridgeListUrl)
 - [ ] `get_swap_quote`, `show_swap_quote` (apiBaseUrl, tokenIn, tokenOut, amountIn; optional chainId)
 
-*(Use browser console and `wallet_invokeSnap` as in TESTING_INSTRUCTIONS.md.)*
+_(Use browser console and `wallet_invokeSnap` as in TESTING_INSTRUCTIONS.md.)_
 
 ---
 
 ## 3. Companion site cards
 
 - [ ] **Market data:** "Show market data" opens Snap dialog; "Fetch market summary" shows tokens/prices
-- [ ] **Bridge:** "Show bridge routes" opens Snap dialog with CCIP routes
+- [ ] **Bridge:** "Show bridge routes" opens Snap dialog with CCIP and Trustless routes
 - [ ] **Swap quote:** Enter token In/Out addresses and amount (raw); "Get quote" shows amountOut; "Show quote in Snap" opens dialog
 
 ---
 
-When all items are checked, manual E2E (snap-9 and snap-10) is complete.
+## 4. Logos and images (pre-publish)
+
+- [ ] Snap icon shows in MetaMask (Settings → Snaps → Chain 138).
+- [ ] Token list from API: every token has `logoURI`; list has list-level `logoURI` (see PRE_PUBLISH_TESTING.md §4.3).
+- [ ] Networks from API: each network has `iconUrls` and URLs resolve (see PRE_PUBLISH_TESTING.md §4.4).
+
+---
+
+When all items are checked, manual E2E (snap-9 and snap-10) is complete. Before publishing, complete the full [PRE_PUBLISH_TESTING.md](docs/PRE_PUBLISH_TESTING.md) sign-off.

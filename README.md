@@ -12,9 +12,22 @@ This repository contains all MetaMask integration components for ChainID 138, in
 - Network configuration
 - Token lists
 - Price feed integration
+- **Smart Accounts Kit integration** ✅
 - Documentation
 - Examples
 - Scripts
+
+### ✅ Smart Accounts Kit Integration
+
+**Status**: Ready for deployment
+
+- ✅ All deployment scripts created
+- ✅ AccountWalletRegistry extension contract created
+- ✅ Complete documentation (user & developer guides)
+- ✅ Delegation framework documented
+- ✅ Advanced Permissions (ERC-7715) documented
+
+See `ALL_TASKS_COMPLETE_FINAL.md` for complete status.
 
 ---
 
@@ -62,6 +75,10 @@ metamask-integration/
 ### Integration Guides
 - [Oracle Integration](./docs/METAMASK_ORACLE_INTEGRATION.md) - Price feed integration
 - [Token List Hosting](./docs/METAMASK_TOKEN_LIST_HOSTING.md) - Deployment guide
+- [Smart Accounts User Guide](./docs/SMART_ACCOUNTS_USER_GUIDE.md) - User guide for Smart Accounts
+- [Smart Accounts Developer Guide](./docs/SMART_ACCOUNTS_DEVELOPER_GUIDE.md) - Developer integration guide
+- [Delegation Usage Guide](./docs/DELEGATION_USAGE_GUIDE.md) - Delegation framework guide
+- [Advanced Permissions Guide](./docs/ADVANCED_PERMISSIONS_GUIDE.md) - ERC-7715 permissions guide
 
 ### Troubleshooting
 - [Troubleshooting Guide](./docs/METAMASK_TROUBLESHOOTING_GUIDE.md) - Common issues

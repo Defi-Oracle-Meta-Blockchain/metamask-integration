@@ -80,8 +80,30 @@ export async function getMetaMaskEIP6963Provider() {
 }
 
 /**
+ * Check if a provider reports as MetaMask Flask via web3_clientVersion.
+ *
+ * @param provider
+ */
+async function isFlaskProvider(
+  provider: MetaMaskInpageProvider,
+): Promise<boolean> {
+  try {
+    const clientVersion = (await provider.request({
+      method: 'web3_clientVersion',
+    })) as string | string[] | undefined;
+    const versionStr = Array.isArray(clientVersion)
+      ? clientVersion.join(' ')
+      : String(clientVersion ?? '');
+    return versionStr.toLowerCase().includes('flask');
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Get a provider that supports snaps. This will loop through all the detected
- * providers and return the first one that supports snaps.
+ * providers and return the first one that supports snaps. Prefers Flask when
+ * multiple snaps-capable providers exist so the UI can show "Connect MetaMask Flask".
  *
  * @returns The provider, or `null` if no provider supports snaps.
  */
@@ -103,10 +125,19 @@ export async function getSnapsProvider() {
   }
 
   if (window.ethereum?.providers) {
+    const snapsProviders: MetaMaskInpageProvider[] = [];
     for (const provider of window.ethereum.providers) {
       if (await hasSnapsSupport(provider)) {
-        return provider;
+        snapsProviders.push(provider);
       }
+    }
+    if (snapsProviders.length > 0) {
+      for (const provider of snapsProviders) {
+        if (await isFlaskProvider(provider)) {
+          return provider;
+        }
+      }
+      return snapsProviders[0];
     }
   }
 
@@ -114,6 +145,24 @@ export async function getSnapsProvider() {
 
   if (eip6963Provider && (await hasSnapsSupport(eip6963Provider))) {
     return eip6963Provider;
+  }
+
+  // Fallback: if window.ethereum reports Flask, use it (Flask supports snaps;
+  // hasSnapsSupport may have failed e.g. if wallet was locked).
+  if (window.ethereum) {
+    try {
+      const clientVersion = (await window.ethereum.request({
+        method: 'web3_clientVersion',
+      })) as string | string[] | undefined;
+      const versionStr = Array.isArray(clientVersion)
+        ? clientVersion.join(' ')
+        : String(clientVersion ?? '');
+      if (versionStr.toLowerCase().includes('flask')) {
+        return window.ethereum as MetaMaskInpageProvider;
+      }
+    } catch {
+      // ignore
+    }
   }
 
   return null;

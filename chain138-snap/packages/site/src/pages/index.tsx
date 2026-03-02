@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
-import { useState } from 'react';
 import {
   Button,
   ConnectButton,
@@ -9,7 +9,7 @@ import {
   SendHelloButton,
   Card,
 } from '../components';
-import { defaultSnapOrigin, getSnapApiBaseUrl } from '../config';
+import { defaultSnapOrigin, getSnapApiBaseUrl, getSnapSiteUrl } from '../config';
 import {
   useMetaMask,
   useInvokeSnap,
@@ -109,6 +109,9 @@ const MarketSummaryList = styled.div`
   margin-top: 0.8rem;
 `;
 
+/**
+ *
+ */
 const Index = () => {
   const { error } = useMetaMaskContext();
   const { isFlask, snapsDetected, installedSnap } = useMetaMask();
@@ -116,17 +119,52 @@ const Index = () => {
   const invokeSnap = useInvokeSnap();
   const apiBaseUrl = getSnapApiBaseUrl();
   const [marketSummary, setMarketSummary] = useState<{
-    tokens: Array<{
+    /**
+     *
+     */
+    tokens: {
+      /**
+       *
+       */
       symbol?: string;
+      /**
+       *
+       */
       name?: string;
+      /**
+       *
+       */
       address?: string;
-      market?: { priceUsd?: number; volume24h?: number };
-    }>;
+      /**
+       *
+       */
+      market?: {
+        /**
+         *
+         */
+        priceUsd?: number; /**
+                            *
+                            */
+        volume24h?: number;
+      };
+    }[];
+    /**
+     *
+     */
     error?: string;
   } | null>(null);
   const [swapQuote, setSwapQuote] = useState<{
+    /**
+     *
+     */
     amountOut?: string;
+    /**
+     *
+     */
     error?: string;
+    /**
+     *
+     */
     poolAddress?: string | null;
   } | null>(null);
   const [swapTokenIn, setSwapTokenIn] = useState('');
@@ -139,12 +177,20 @@ const Index = () => {
 
   const snapParams = apiBaseUrl ? { apiBaseUrl } : undefined;
 
+  /**
+   *
+   */
   const handleSendHelloClick = async () => {
     await invokeSnap(
-      snapParams ? { method: 'hello', params: snapParams } : { method: 'hello' },
+      snapParams
+        ? { method: 'hello', params: snapParams }
+        : { method: 'hello' },
     );
   };
 
+  /**
+   *
+   */
   const handleShowMarketData = async () => {
     if (!apiBaseUrl) {
       return;
@@ -155,6 +201,9 @@ const Index = () => {
     });
   };
 
+  /**
+   *
+   */
   const handleGetMarketSummary = async () => {
     if (!apiBaseUrl) {
       setMarketSummary({ tokens: [], error: 'Set GATSBY_SNAP_API_BASE_URL' });
@@ -165,12 +214,38 @@ const Index = () => {
         method: 'get_market_summary',
         params: { apiBaseUrl },
       })) as {
-        tokens?: Array<{
+        /**
+         *
+         */
+        tokens?: {
+          /**
+           *
+           */
           symbol?: string;
+          /**
+           *
+           */
           name?: string;
+          /**
+           *
+           */
           address?: string;
-          market?: { priceUsd?: number; volume24h?: number };
-        }>;
+          /**
+           *
+           */
+          market?: {
+            /**
+             *
+             */
+            priceUsd?: number; /**
+                                *
+                                */
+            volume24h?: number;
+          };
+        }[];
+        /**
+         *
+         */
         error?: string;
       };
       if (result?.error) {
@@ -186,6 +261,9 @@ const Index = () => {
     }
   };
 
+  /**
+   *
+   */
   const handleShowBridgeRoutes = async () => {
     if (!apiBaseUrl) {
       return;
@@ -196,6 +274,23 @@ const Index = () => {
     });
   };
 
+  /**
+   * Show dynamic info (networks + token list URL) in a Snap dialog.
+   * Use the token list URL in MetaMask Settings → Token list to get tokens and icons.
+   */
+  const handleShowDynamicInfo = async () => {
+    if (!apiBaseUrl) {
+      return;
+    }
+    await invokeSnap({
+      method: 'show_dynamic_info',
+      params: { apiBaseUrl },
+    });
+  };
+
+  /**
+   *
+   */
   const handleGetSwapQuote = async () => {
     if (!apiBaseUrl) {
       setSwapQuote({ error: 'Set GATSBY_SNAP_API_BASE_URL' });
@@ -216,8 +311,17 @@ const Index = () => {
           amountIn: swapAmountIn.trim(),
         },
       })) as {
+        /**
+         *
+         */
         amountOut?: string;
+        /**
+         *
+         */
         error?: string;
+        /**
+         *
+         */
         poolAddress?: string | null;
       };
       setSwapQuote({
@@ -232,6 +336,9 @@ const Index = () => {
     }
   };
 
+  /**
+   *
+   */
   const handleShowSwapQuote = async () => {
     if (!apiBaseUrl || !swapTokenIn || !swapTokenOut || !swapAmountIn) {
       return;
@@ -251,10 +358,11 @@ const Index = () => {
   return (
     <Container>
       <Heading>
-        Welcome to <Span>template-snap</Span>
+        Welcome to <Span>Chain 138 Snap</Span>
       </Heading>
       <Subtitle>
-        Get started by editing <code>src/index.tsx</code>
+        Add Chain 138 (DeFi Oracle Meta) to MetaMask and use market data,
+        bridge, and swap.
       </Subtitle>
       <Notice>
         <p>
@@ -262,6 +370,22 @@ const Index = () => {
           Snaps) → Connect your wallet → Install the Snap → Use the Market,
           Bridge, and Swap cards below (set GATSBY_SNAP_API_BASE_URL for
           production API).
+        </p>
+        <p style={{ marginTop: '1rem', marginBottom: 0 }}>
+          <strong>Chain 138 Send:</strong> If MetaMask’s in-wallet
+          &quot;Send&quot; errors with &quot;No XChain Swaps native asset
+          found&quot;, use{' '}
+          <a
+            href={
+              getSnapSiteUrl()
+                ? `${getSnapSiteUrl()}${(typeof process !== 'undefined' && process.env?.GATSBY_PATH_PREFIX) || ''}/send`
+                : './send'
+            }
+            style={{ color: 'var(--color-primary-default, #6F4CFF)' }}
+          >
+            Send on Chain 138
+          </a>{' '}
+          instead.
         </p>
       </Notice>
       <CardContainer>
@@ -291,6 +415,7 @@ const Index = () => {
                 <ConnectButton
                   onClick={requestSnap}
                   disabled={!isMetaMaskReady}
+                  label={isFlask ? 'Connect MetaMask Flask' : 'Connect'}
                 />
               ),
             }}
@@ -370,7 +495,7 @@ const Index = () => {
           content={{
             title: 'Bridge',
             description: apiBaseUrl
-              ? 'Show CCIP bridge routes (WETH9 / WETH10) in a Snap dialog. Use explorer for executing transfers.'
+              ? 'Show CCIP and Trustless bridge routes in a Snap dialog. Use explorer for executing transfers.'
               : 'Set GATSBY_SNAP_API_BASE_URL to show bridge routes.',
             button: (
               <Button
@@ -378,6 +503,23 @@ const Index = () => {
                 disabled={!installedSnap || !apiBaseUrl}
               >
                 Show bridge routes
+              </Button>
+            ),
+          }}
+          disabled={!installedSnap}
+        />
+        <Card
+          content={{
+            title: 'Token list URL',
+            description: apiBaseUrl
+              ? 'Show networks and token list URL. Add the URL in MetaMask Settings → Token list to display tokens and icons.'
+              : 'Set GATSBY_SNAP_API_BASE_URL to get the token list URL.',
+            button: (
+              <Button
+                onClick={handleShowDynamicInfo}
+                disabled={!installedSnap || !apiBaseUrl}
+              >
+                Show dynamic info
               </Button>
             ),
           }}
@@ -412,7 +554,9 @@ const Index = () => {
                     style={{ width: '100%' }}
                   />
                 </div>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <div
+                  style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}
+                >
                   <Button
                     onClick={handleGetSwapQuote}
                     disabled={!installedSnap}
@@ -482,10 +626,11 @@ const Index = () => {
         )}
         <Notice>
           <p>
-            Please note that the <b>snap.manifest.json</b> and{' '}
-            <b>package.json</b> must be located in the server root directory and
-            the bundle must be hosted at the location specified by the location
-            field.
+            When hosting the Snap yourself (e.g. for development),{' '}
+            <b>snap.manifest.json</b> and <b>package.json</b> must be at the
+            host’s root path, and the bundle must be served at the path given in{' '}
+            <b>source.location</b> in the manifest. When installing from npm
+            (production), the published package already satisfies this layout.
           </p>
         </Notice>
       </CardContainer>

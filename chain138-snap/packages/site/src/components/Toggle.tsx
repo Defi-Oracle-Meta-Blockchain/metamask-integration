@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
+/**
+ *
+ */
 type CheckedProps = {
+  /**
+   *
+   */
   readonly checked: boolean;
 };
 
@@ -90,15 +96,30 @@ const ToggleCircle = styled.div<CheckedProps>`
   transition: all 0.25s ease;
 `;
 
+/**
+ *
+ * @param options0
+ * @param options0.onToggle
+ * @param options0.defaultChecked
+ */
 export const Toggle = ({
   onToggle,
   defaultChecked = false,
 }: {
+  /**
+   *
+   */
   onToggle: () => void;
+  /**
+   *
+   */
   defaultChecked?: boolean;
 }) => {
   const [checked, setChecked] = useState(defaultChecked);
 
+  /**
+   *
+   */
   const handleChange = () => {
     onToggle();
     setChecked(!checked);

@@ -70,6 +70,9 @@ const ConnectedIndicator = styled.div`
   background-color: green;
 `;
 
+/**
+ *
+ */
 export const InstallFlaskButton = () => (
   <Link href="https://metamask.io/flask/" target="_blank">
     <FlaskFox />
@@ -77,15 +80,31 @@ export const InstallFlaskButton = () => (
   </Link>
 );
 
-export const ConnectButton = (props: ComponentProps<typeof Button>) => {
+/**
+ *
+ * @param props
+ */
+export const ConnectButton = (
+  props: ComponentProps<typeof Button> & {
+    /**
+     *
+     */
+    label?: string;
+  },
+) => {
+  const { label = 'Connect', ...rest } = props;
   return (
-    <Button {...props}>
+    <Button {...rest}>
       <FlaskFox />
-      <ButtonText>Connect</ButtonText>
+      <ButtonText>{label}</ButtonText>
     </Button>
   );
 };
 
+/**
+ *
+ * @param props
+ */
 export const ReconnectButton = (props: ComponentProps<typeof Button>) => {
   return (
     <Button {...props}>
@@ -95,10 +114,17 @@ export const ReconnectButton = (props: ComponentProps<typeof Button>) => {
   );
 };
 
+/**
+ *
+ * @param props
+ */
 export const SendHelloButton = (props: ComponentProps<typeof Button>) => {
   return <Button {...props}>Send message</Button>;
 };
 
+/**
+ *
+ */
 export const HeaderButtons = () => {
   const requestSnap = useRequestSnap();
   const { isFlask, installedSnap } = useMetaMask();
@@ -108,7 +134,12 @@ export const HeaderButtons = () => {
   }
 
   if (!installedSnap) {
-    return <ConnectButton onClick={requestSnap} />;
+    return (
+      <ConnectButton
+        onClick={requestSnap}
+        label={isFlask ? 'Connect MetaMask Flask' : 'Connect'}
+      />
+    );
   }
 
   if (shouldDisplayReconnectButton(installedSnap)) {

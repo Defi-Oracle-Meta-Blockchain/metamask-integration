@@ -1,0 +1,19 @@
+{
+  "name": "@proxmox/metamask-dual-chain-provider",
+  "version": "1.0.0",
+  "description": "MetaMask provider for ChainID 138 and Ethereum Mainnet",
+  "type": "module",
+  "main": "index.js",
+  "files": ["*.js", "*.d.ts", "config/"],
+  "keywords": ["metamask", "web3", "chainid-138", "ethereum-mainnet", "oracle", "token-list"],
+  "license": "MIT",
+  "peerDependencies": {
+    "ethers": ">=6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ethers": { "optional": true }
+  },
+  "scripts": {
+    "test:integration": "node test-integration.mjs"
+  }
+}

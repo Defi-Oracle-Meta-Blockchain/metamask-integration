@@ -6,6 +6,9 @@ const DEFAULT_MARKET_API_BASE = '';
 
 /** RPC params: apiBaseUrl and optional override URLs for networks, token list, bridge list */
 export type SnapRpcParams = {
+  /**
+   *
+   */
   apiBaseUrl?: string;
   /** When set, get_networks / get_chain138_config fetch this URL instead of apiBaseUrl */
   networksUrl?: string;
@@ -13,6 +16,15 @@ export type SnapRpcParams = {
   tokenListUrl?: string;
   /** When set, get_bridge_routes / show_bridge_routes fetch this URL instead of apiBaseUrl */
   bridgeListUrl?: string;
+  /** For get_token_mapping: source chain ID (e.g. 138) */
+  fromChain?: number;
+  /** For get_token_mapping: destination chain ID (e.g. 651940) */
+  toChain?: number;
+  /** For get_token_mapping (resolve): token address on source chain to resolve to destination */
+  address?: string;
+  /**
+   *
+   */
   chainId?: number;
   [key: string]: unknown;
 };
@@ -23,7 +35,16 @@ export type SnapRpcParams = {
  * @param params - Request params with optional apiBaseUrl.
  * @returns API base URL string.
  */
-function getApiBase(params: { apiBaseUrl?: string } | undefined): string {
+function getApiBase(
+  params:
+    | {
+        /**
+         *
+         */
+        apiBaseUrl?: string;
+      }
+    | undefined,
+): string {
   return (params?.apiBaseUrl ?? DEFAULT_MARKET_API_BASE).replace(/\/$/u, '');
 }
 
@@ -39,16 +60,65 @@ async function fetchNetworks(apiBase: string) {
     throw new Error(`HTTP ${res.status}`);
   }
   return res.json() as Promise<{
+    /**
+     *
+     */
     version?: string;
+    /**
+     *
+     */
     networks?: {
+      /**
+       *
+       */
       chainId: string;
+      /**
+       *
+       */
       chainIdDecimal: number;
+      /**
+       *
+       */
       chainName: string;
+      /**
+       *
+       */
       rpcUrls: string[];
-      nativeCurrency: { name: string; symbol: string; decimals: number };
+      /**
+       *
+       */
+      nativeCurrency: {
+        /**
+         *
+         */
+        name: string; /**
+         *
+         */
+        symbol: string; /**
+         *
+         */
+        decimals: number;
+      };
+      /**
+       *
+       */
       blockExplorerUrls: string[];
+      /**
+       *
+       */
       iconUrls?: string[];
-      oracles?: { name: string; address: string }[];
+      /**
+       *
+       */
+      oracles?: {
+        /**
+         *
+         */
+        name: string; /**
+         *
+         */
+        address: string;
+      }[];
     }[];
   }>;
 }
@@ -76,12 +146,26 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       if (networksUrl) {
         try {
           const res = await fetch(networksUrl);
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const data = (await res.json()) as { version?: string; networks?: unknown[] };
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}`);
+          }
+          const data = (await res.json()) as {
+            /**
+             *
+             */
+            version?: string;
+            /**
+             *
+             */
+            networks?: unknown[];
+          };
           return { version: data.version, networks: data.networks ?? [] };
         } catch (error) {
           return {
-            error: error instanceof Error ? error.message : 'Failed to fetch networks URL',
+            error:
+              error instanceof Error
+                ? error.message
+                : 'Failed to fetch networks URL',
             version: undefined,
             networks: [],
           };
@@ -89,8 +173,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       }
       if (!base) {
         return {
-          error:
-            'Pass apiBaseUrl or networksUrl to fetch networks',
+          error: 'Pass apiBaseUrl or networksUrl to fetch networks',
           version: undefined,
           networks: [],
         };
@@ -109,11 +192,26 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
     }
 
     case 'get_chain138_config': {
+      /**
+       *
+       */
       const loadNetworks = async () => {
         if (networksUrl) {
           const res = await fetch(networksUrl);
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const data = (await res.json()) as { networks?: { chainIdDecimal?: number }[] };
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}`);
+          }
+          const data = (await res.json()) as {
+            /**
+             *
+             */
+            networks?: {
+              /**
+               *
+               */
+              chainIdDecimal?: number;
+            }[];
+          };
           return data.networks ?? [];
         }
         if (base) {
@@ -125,20 +223,71 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       try {
         const networks = await loadNetworks();
         if (networks === null) {
-          return { error: 'Pass apiBaseUrl or networksUrl to fetch chain config' };
+          return {
+            error: 'Pass apiBaseUrl or networksUrl to fetch chain config',
+          };
         }
-        const chain138 = networks.find((net: { chainIdDecimal?: number }) => net.chainIdDecimal === 138);
+        const chain138 = networks.find(
+          (net: {
+            /**
+             *
+             */
+            chainIdDecimal?: number;
+          }) => net.chainIdDecimal === 138,
+        );
         if (!chain138) {
           return { error: 'Chain 138 not found in networks response' };
         }
         return {
-          chainId: (chain138 as { chainId?: string }).chainId,
+          chainId: (
+            chain138 as {
+              /**
+               *
+               */
+              chainId?: string;
+            }
+          ).chainId,
           chainIdDecimal: chain138.chainIdDecimal,
-          chainName: (chain138 as { chainName?: string }).chainName,
-          rpcUrls: (chain138 as { rpcUrls?: string[] }).rpcUrls,
-          nativeCurrency: (chain138 as { nativeCurrency?: unknown }).nativeCurrency,
-          blockExplorerUrls: (chain138 as { blockExplorerUrls?: string[] }).blockExplorerUrls,
-          oracles: (chain138 as { oracles?: unknown }).oracles,
+          chainName: (
+            chain138 as {
+              /**
+               *
+               */
+              chainName?: string;
+            }
+          ).chainName,
+          rpcUrls: (
+            chain138 as {
+              /**
+               *
+               */
+              rpcUrls?: string[];
+            }
+          ).rpcUrls,
+          nativeCurrency: (
+            chain138 as {
+              /**
+               *
+               */
+              nativeCurrency?: unknown;
+            }
+          ).nativeCurrency,
+          blockExplorerUrls: (
+            chain138 as {
+              /**
+               *
+               */
+              blockExplorerUrls?: string[];
+            }
+          ).blockExplorerUrls,
+          oracles: (
+            chain138 as {
+              /**
+               *
+               */
+              oracles?: unknown;
+            }
+          ).oracles,
         };
       } catch (error) {
         return {
@@ -197,18 +346,23 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
 
     case 'get_token_list': {
       if (tokenListUrl) {
-        const chainIdParam = params?.chainId as number | undefined;
+        const chainIdParam = params?.chainId;
         const url = chainIdParam
           ? `${tokenListUrl}${tokenListUrl.includes('?') ? '&' : '?'}chainId=${chainIdParam}`
           : tokenListUrl;
         try {
           const res = await fetch(url);
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}`);
+          }
           const data = await res.json();
           return data;
         } catch (error) {
           return {
-            error: error instanceof Error ? error.message : 'Failed to fetch token list URL',
+            error:
+              error instanceof Error
+                ? error.message
+                : 'Failed to fetch token list URL',
             tokens: [],
           };
         }
@@ -219,7 +373,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           tokens: [],
         };
       }
-      const chainIdParam = params?.chainId as number | undefined;
+      const chainIdParam = params?.chainId;
       const url = chainIdParam
         ? `${base}/api/v1/report/token-list?chainId=${chainIdParam}`
         : `${base}/api/v1/report/token-list`;
@@ -245,7 +399,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       if (!base) {
         return { error: 'Pass apiBaseUrl to fetch oracles config', chains: [] };
       }
-      const chainIdParam = params?.chainId as number | undefined;
+      const chainIdParam = params?.chainId;
       const configUrl = chainIdParam
         ? `${base}/api/v1/config?chainId=${chainIdParam}`
         : `${base}/api/v1/config`;
@@ -274,7 +428,8 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
             content: (
               <Box>
                 <Text>
-                  Pass apiBaseUrl, networksUrl, or tokenListUrl to see dynamic networks and token list URL.
+                  Pass apiBaseUrl, networksUrl, or tokenListUrl to see dynamic
+                  networks and token list URL.
                 </Text>
               </Box>
             ),
@@ -286,16 +441,36 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
         if (networksUrl) {
           const res = await fetch(networksUrl);
           if (res.ok) {
-            const data = (await res.json()) as { networks?: { chainName?: string; chainIdDecimal?: number }[] };
+            const data = (await res.json()) as {
+              /**
+               *
+               */
+              networks?: {
+                /**
+                 *
+                 */
+                chainName?: string; /**
+                                     *
+                                     */
+                chainIdDecimal?: number;
+              }[];
+            };
             const nets = data.networks ?? [];
-            chainNames = nets.map((n) => `${n.chainName ?? ''} (${n.chainIdDecimal ?? ''})`).join(', ') || 'None';
+            chainNames =
+              nets
+                .map((n) => `${n.chainName ?? ''} (${n.chainIdDecimal ?? ''})`)
+                .join(', ') || 'None';
           }
         } else if (base) {
           const data = await fetchNetworks(base);
           const networks = data.networks ?? [];
-          chainNames = networks.map((net) => `${net.chainName} (${net.chainIdDecimal})`).join(', ') || 'None';
+          chainNames =
+            networks
+              .map((net) => `${net.chainName} (${net.chainIdDecimal})`)
+              .join(', ') || 'None';
         }
-        const displayTokenListUrl = tokenListUrl || (base ? `${base}/api/v1/report/token-list` : '');
+        const displayTokenListUrl =
+          tokenListUrl || (base ? `${base}/api/v1/report/token-list` : '');
         return snap.request({
           method: 'snap_dialog',
           params: {
@@ -344,7 +519,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           tokens: [],
         };
       }
-      const chainIdParam = (params?.chainId as number | undefined) ?? 138;
+      const chainIdParam = params?.chainId ?? 138;
       try {
         const res = await fetch(
           `${base}/api/v1/tokens?chainId=${chainIdParam}&limit=50`,
@@ -353,12 +528,35 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           throw new Error(`HTTP ${res.status}`);
         }
         const data = (await res.json()) as {
-          tokens?: Array<{
+          /**
+           *
+           */
+          tokens?: {
+            /**
+             *
+             */
             symbol?: string;
+            /**
+             *
+             */
             name?: string;
+            /**
+             *
+             */
             address?: string;
-            market?: { priceUsd?: number; volume24h?: number };
-          }>;
+            /**
+             *
+             */
+            market?: {
+              /**
+               *
+               */
+              priceUsd?: number; /**
+                                  *
+                                  */
+              volume24h?: number;
+            };
+          }[];
         };
         const tokens = (data.tokens ?? []).map((t) => ({
           symbol: t.symbol,
@@ -388,7 +586,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           amountOut: undefined,
         };
       }
-      const chainIdParam = (params?.chainId as number | undefined) ?? 138;
+      const chainIdParam = params?.chainId ?? 138;
       const tokenIn = params?.tokenIn as string | undefined;
       const tokenOut = params?.tokenOut as string | undefined;
       const amountIn = params?.amountIn as string | undefined;
@@ -406,8 +604,17 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
         url.searchParams.set('amountIn', String(amountIn));
         const res = await fetch(url.toString());
         const data = (await res.json()) as {
+          /**
+           *
+           */
           amountOut?: string | null;
+          /**
+           *
+           */
           error?: string;
+          /**
+           *
+           */
           poolAddress?: string | null;
         };
         if (!res.ok) {
@@ -449,7 +656,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           },
         });
       }
-      const chainIdParam = (params?.chainId as number | undefined) ?? 138;
+      const chainIdParam = params?.chainId ?? 138;
       const tokenIn = params?.tokenIn as string | undefined;
       const tokenOut = params?.tokenOut as string | undefined;
       const amountIn = params?.amountIn as string | undefined;
@@ -477,7 +684,13 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
         url.searchParams.set('amountIn', String(amountIn));
         const res = await fetch(url.toString());
         const data = (await res.json()) as {
+          /**
+           *
+           */
           amountOut?: string | null;
+          /**
+           *
+           */
           error?: string;
         };
         if (!res.ok || data.error) {
@@ -533,7 +746,8 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
     }
 
     case 'get_bridge_routes': {
-      const bridgeUrl = bridgeListUrl || (base ? `${base}/api/v1/bridge/routes` : '');
+      const bridgeUrl =
+        bridgeListUrl || (base ? `${base}/api/v1/bridge/routes` : '');
       if (!bridgeUrl) {
         return {
           error: 'Pass apiBaseUrl or bridgeListUrl to fetch bridge routes',
@@ -543,9 +757,17 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       }
       try {
         const res = await fetch(bridgeUrl);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
         const data = (await res.json()) as {
+          /**
+           *
+           */
           routes?: Record<string, Record<string, string>>;
+          /**
+           *
+           */
           chain138Bridges?: Record<string, string>;
         };
         return {
@@ -565,7 +787,8 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
     }
 
     case 'show_bridge_routes': {
-      const showBridgeUrl = bridgeListUrl || (base ? `${base}/api/v1/bridge/routes` : '');
+      const showBridgeUrl =
+        bridgeListUrl || (base ? `${base}/api/v1/bridge/routes` : '');
       if (!showBridgeUrl) {
         return snap.request({
           method: 'snap_dialog',
@@ -574,7 +797,8 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
             content: (
               <Box>
                 <Text>
-                  Pass apiBaseUrl or bridgeListUrl to see bridge routes (CCIP WETH9 / WETH10).
+                  Pass apiBaseUrl or bridgeListUrl to see bridge routes (CCIP
+                  and Trustless).
                 </Text>
               </Box>
             ),
@@ -587,25 +811,50 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           throw new Error(`HTTP ${res.status}`);
         }
         const data = (await res.json()) as {
+          /**
+           *
+           */
           routes?: Record<string, Record<string, string>>;
+          /**
+           *
+           */
           chain138Bridges?: Record<string, string>;
         };
         const lines: string[] = [];
-        if (data.chain138Bridges) {
+        // CCIP (WETH9 / WETH10)
+        if (data.chain138Bridges?.weth9 || data.chain138Bridges?.weth10) {
+          lines.push('CCIP');
+          if (data.chain138Bridges.weth9) {
+            lines.push(
+              `  WETH9 (138): ${String(data.chain138Bridges.weth9).slice(0, 10)}...`,
+            );
+          }
+          if (data.chain138Bridges.weth10) {
+            lines.push(
+              `  WETH10 (138): ${String(data.chain138Bridges.weth10).slice(0, 10)}...`,
+            );
+          }
+          if (data.routes?.weth9?.['Ethereum Mainnet (1)']) {
+            lines.push('  WETH9 → Ethereum Mainnet');
+          }
+          if (data.routes?.weth10?.['Ethereum Mainnet (1)']) {
+            lines.push('  WETH10 → Ethereum Mainnet');
+          }
+          lines.push('');
+        }
+        // Trustless bridge (Lockbox on 138)
+        if (data.chain138Bridges?.trustless) {
+          lines.push('Trustless');
           lines.push(
-            `WETH9 Bridge (138): ${String(data.chain138Bridges.weth9 ?? '').slice(0, 10)}...`,
+            `  Lockbox (138): ${String(data.chain138Bridges.trustless).slice(0, 10)}...`,
           );
-          lines.push(
-            `WETH10 Bridge (138): ${String(data.chain138Bridges.weth10 ?? '').slice(0, 10)}...`,
-          );
+          if (data.routes?.trustless?.['Ethereum Mainnet (1)']) {
+            lines.push('  Trustless → Ethereum Mainnet');
+          } else {
+            lines.push('  → Ethereum Mainnet (use explorer to transfer)');
+          }
+          lines.push('');
         }
-        if (data.routes?.weth9?.['Ethereum Mainnet (1)']) {
-          lines.push('WETH9 → Ethereum Mainnet');
-        }
-        if (data.routes?.weth10?.['Ethereum Mainnet (1)']) {
-          lines.push('WETH10 → Ethereum Mainnet');
-        }
-        lines.push('');
         lines.push('Use the explorer to execute bridge transfers.');
         return snap.request({
           method: 'snap_dialog',
@@ -614,7 +863,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
             content: (
               <Box>
                 <Text>
-                  <Bold>CCIP Bridge Routes</Bold>
+                  <Bold>Bridge Routes (CCIP + Trustless)</Bold>
                 </Text>
                 <Text>{lines.join('\n')}</Text>
               </Box>
@@ -639,6 +888,92 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       }
     }
 
+    case 'get_token_mapping': {
+      const fromChain = params?.fromChain ?? 138;
+      const toChain = params?.toChain ?? 651940;
+      const address = params?.address?.trim();
+      if (!base) {
+        return {
+          error:
+            'Pass apiBaseUrl to use token-mapping API (cross-chain address resolution).',
+          mapping: undefined,
+          resolvedAddress: undefined,
+        };
+      }
+      try {
+        if (address) {
+          const res = await fetch(
+            `${base}/api/v1/token-mapping/resolve?fromChain=${fromChain}&toChain=${toChain}&address=${encodeURIComponent(address)}`,
+          );
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}`);
+          }
+          const data = (await res.json()) as {
+            /**
+             *
+             */
+            addressOnTarget?: string | null;
+            /**
+             *
+             */
+            addressOnSource?: string;
+            /**
+             *
+             */
+            error?: string;
+          };
+          return {
+            resolvedAddress: data.addressOnTarget ?? undefined,
+            error: data.error,
+          };
+        }
+        const res = await fetch(
+          `${base}/api/v1/token-mapping?fromChain=${fromChain}&toChain=${toChain}`,
+        );
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        const data = (await res.json()) as {
+          /**
+           *
+           */
+          tokens?: unknown[];
+          /**
+           *
+           */
+          addressMapFromTo?: Record<string, string>;
+          /**
+           *
+           */
+          addressMapToFrom?: Record<string, string>;
+          /**
+           *
+           */
+          error?: string;
+        };
+        if (data.error) {
+          return { error: data.error, mapping: undefined };
+        }
+        return {
+          mapping: {
+            tokens: data.tokens,
+            addressMapFromTo: data.addressMapFromTo,
+            addressMapToFrom: data.addressMapToFrom,
+          },
+          error: undefined,
+        };
+      } catch (error) {
+        return {
+          error:
+            error instanceof Error
+              ? error.message
+              : 'Failed to fetch token mapping',
+          mapping: undefined,
+          resolvedAddress: undefined,
+        };
+      }
+    }
+
     case 'show_market_data': {
       if (!base) {
         return snap.request({
@@ -655,7 +990,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           },
         });
       }
-      const chainIdParam = (params?.chainId as number | undefined) ?? 138;
+      const chainIdParam = params?.chainId ?? 138;
       try {
         const res = await fetch(
           `${base}/api/v1/tokens?chainId=${chainIdParam}&limit=20`,
@@ -664,11 +999,28 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           throw new Error(`HTTP ${res.status}`);
         }
         const data = (await res.json()) as {
-          tokens?: Array<{
+          /**
+           *
+           */
+          tokens?: {
+            /**
+             *
+             */
             symbol?: string;
+            /**
+             *
+             */
             name?: string;
-            market?: { priceUsd?: number };
-          }>;
+            /**
+             *
+             */
+            market?: {
+              /**
+               *
+               */
+              priceUsd?: number;
+            };
+          }[];
         };
         const tokens = data.tokens ?? [];
         const lines =

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provider E2E – Add chains, switch, tokens (Chain 138 + Mainnet + ALL)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 560px; margin: 24px auto; padding: 0 16px; }
+    h1 { font-size: 1.25rem; margin-bottom: 8px; }
+    .sub { color: #666; font-size: 0.875rem; margin-bottom: 20px; }
+    section { margin-bottom: 24px; padding: 16px; background: #f5f5f5; border-radius: 8px; }
+    button { padding: 8px 14px; margin-right: 8px; margin-bottom: 8px; cursor: pointer; }
+    .out { margin-top: 12px; white-space: pre-wrap; word-break: break-all; font-size: 0.8125rem; }
+    .err { color: #c00; }
+    .ok { color: #080; }
+  </style>
+</head>
+<body>
+  <h1>Provider E2E (manual)</h1>
+  <p class="sub">Add Chain 138, Ethereum Mainnet, ALL Mainnet; switch chain; list tokens. Requires MetaMask.</p>
+
+  <section>
+    <strong>1. Add chains</strong>
+    <p><button id="add-chains">Add all chains to MetaMask</button></p>
+    <div id="add-out" class="out"></div>
+  </section>
+
+  <section>
+    <strong>2. Switch chain</strong>
+    <p>
+      <button data-chain="138">Switch to 138</button>
+      <button data-chain="1">Switch to 1</button>
+      <button data-chain="651940">Switch to 651940</button>
+    </p>
+    <div id="switch-out" class="out"></div>
+  </section>
+
+  <section>
+    <strong>3. Tokens (from provider)</strong>
+    <p><button id="list-tokens">List tokens for current chain</button></p>
+    <div id="tokens-out" class="out"></div>
+  </section>
+
+  <section>
+    <strong>4. ETH/USD price (oracle)</strong>
+    <p><button id="get-price">Get ETH/USD for current chain</button></p>
+    <div id="price-out" class="out"></div>
+  </section>
+
+  <script type="module">
+    const addOut = document.getElementById('add-out');
+    const switchOut = document.getElementById('switch-out');
+    const tokensOut = document.getElementById('tokens-out');
+    const priceOut = document.getElementById('price-out');
+
+    function noProvider() {
+      return !window.ethereum;
+    }
+
+    async function getProvider() {
+      if (noProvider()) {
+        addOut.innerHTML = '<span class="err">No window.ethereum. Install MetaMask.</span>';
+        return null;
+      }
+      return window.ethereum;
+    }
+
+    // Provider is in ../provider (same repo); serve this page from a local server (e.g. npx serve .)
+    const providerUrl = new URL('../provider/index.js', import.meta.url).href;
+    const oraclesUrl = new URL('../provider/oracles.js', import.meta.url).href;
+    const { addChainsToWallet, switchChain, getTokensByChain } = await import(providerUrl);
+    let getEthUsdPrice;
+    try {
+      const oracles = await import(oraclesUrl);
+      getEthUsdPrice = oracles.getEthUsdPrice;
+    } catch (_) {
+      getEthUsdPrice = null;
+    }
+
+    document.getElementById('add-chains').onclick = async () => {
+      addOut.textContent = '';
+      const ethereum = await getProvider();
+      if (!ethereum) return;
+      try {
+        const result = await addChainsToWallet(ethereum);
+        addOut.innerHTML = '<span class="ok">Added: ' + (result.added || 0) + ', Skipped: ' + (result.skipped || 0) + (result.errors?.length ? ', Errors: ' + result.errors.length : '') + '</span>';
+        if (result.errors?.length) addOut.innerHTML += '\n' + result.errors.join('\n');
+      } catch (e) {
+        addOut.innerHTML = '<span class="err">' + (e.message || e) + '</span>';
+      }
+    };
+
+    document.querySelectorAll('[data-chain]').forEach(btn => {
+      btn.onclick = async () => {
+        switchOut.textContent = '';
+        const ethereum = await getProvider();
+        if (!ethereum) return;
+        const chainId = parseInt(btn.dataset.chain, 10);
+        try {
+          await switchChain(ethereum, chainId);
+          switchOut.innerHTML = '<span class="ok">Switched to chain ' + chainId + '</span>';
+        } catch (e) {
+          switchOut.innerHTML = '<span class="err">' + (e.message || e) + '</span>';
+        }
+      };
+    });
+
+    document.getElementById('list-tokens').onclick = async () => {
+      tokensOut.textContent = '';
+      const ethereum = await getProvider();
+      if (!ethereum) return;
+      try {
+        const chainId = parseInt(await ethereum.request({ method: 'eth_chainId' }), 16);
+        const tokens = getTokensByChain(chainId) || [];
+        const list = tokens.filter(t => !(t.tags || []).includes('oracle')).map(t => t.symbol + ' @ ' + t.address);
+        tokensOut.textContent = 'Chain ' + chainId + ': ' + (list.length ? list.join('\n') : 'no tokens');
+      } catch (e) {
+        tokensOut.innerHTML = '<span class="err">' + (e.message || e) + '</span>';
+      }
+    };
+
+    document.getElementById('get-price').onclick = async () => {
+      priceOut.textContent = '';
+      const ethereum = await getProvider();
+      if (!ethereum) return;
+      if (!getEthUsdPrice) {
+        priceOut.innerHTML = '<span class="err">ethers not loaded; getEthUsdPrice requires ethers.</span>';
+        return;
+      }
+      try {
+        const { ethers } = await import('https://esm.sh/ethers@6');
+        const provider = new ethers.BrowserProvider(ethereum);
+        const chainId = Number((await provider.getNetwork()).chainId);
+        const result = await getEthUsdPrice(provider, chainId);
+        if (result) priceOut.innerHTML = '<span class="ok">ETH/USD: ' + result.price + ' (chain ' + chainId + ')</span>';
+        else priceOut.innerHTML = '<span class="err">No oracle for chain ' + chainId + '</span>';
+      } catch (e) {
+        priceOut.innerHTML = '<span class="err">' + (e.message || e) + '</span>';
+      }
+    };
+  </script>
+</body>
+</html>

@@ -2,10 +2,10 @@
   "name": "SMOM-DBIS-138 Token List",
   "version": {
     "major": 1,
-    "minor": 1,
+    "minor": 2,
     "patch": 0
   },
-  "timestamp": "2025-12-22T17:45:00.000Z",
+  "timestamp": "2026-01-26T00:00:00.000Z",
   "tokens": [
     {
       "chainId": 138,
@@ -13,7 +13,7 @@
       "name": "ETH/USD Price Feed",
       "symbol": "ETH-USD",
       "decimals": 8,
-      "logoURI": "https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png"
+      "logoURI": "https://ipfs.io/ipfs/QmPZuycjyJEe2otREuQ5HirvPJ8X6Yc6MBtwz1VhdD79pY"
     },
     {
       "chainId": 138,
@@ -21,15 +21,31 @@
       "name": "Wrapped Ether",
       "symbol": "WETH",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png"
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong"
     },
     {
       "chainId": 138,
-      "address": "0xf4BB2e28688e89fCcE3c0580D37d36A7672E8A9f",
+      "address": "0xf4BB2e28688e89fCcE3c0580D37d36A7672E8A9F",
       "name": "Wrapped Ether v10",
-      "symbol": "WETH10",
+      "symbol": "WETH",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png"
+      "logoURI": "https://ipfs.io/ipfs/QmanDFPHxnbKd6SSNzzXHf9GbpL9dLXSphxDZSPPYE6ds4"
+    },
+    {
+      "chainId": 138,
+      "address": "0x93E66202A11B1772E55407B32B44e5Cd8eda7f22",
+      "name": "Compliant Tether USD",
+      "symbol": "cUSDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP"
+    },
+    {
+      "chainId": 138,
+      "address": "0xf22258f57794CC8E06237084b353Ab30fFfa640b",
+      "name": "Compliant USD Coin",
+      "symbol": "cUSDC",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmNPq4D5JXzurmi9jAhogVMzhAQRk1PZ1r9H3qQUV9gjDm"
     }
   ]
 }

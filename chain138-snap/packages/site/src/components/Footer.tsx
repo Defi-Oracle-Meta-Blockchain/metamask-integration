@@ -39,6 +39,9 @@ const PoweredByContainer = styled.div`
   margin-left: 1rem;
 `;
 
+/**
+ *
+ */
 export const Footer = () => {
   const theme = useTheme();
   const buildVersion = getBuildVersion();

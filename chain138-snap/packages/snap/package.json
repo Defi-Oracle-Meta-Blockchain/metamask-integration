@@ -1,14 +1,14 @@
 {
   "name": "chain138-snap",
-  "version": "0.1.1",
-  "description": "Chain 138 (DeFi Oracle Meta Mainnet) and ALL Mainnet Snap: networks, token list, market data, swap quotes, CCIP bridge routes for MetaMask.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bis-innovations/chain138-snap.git"
-  },
+  "version": "0.1.2",
+  "description": "Chain 138 (DeFi Oracle Meta Mainnet) and ALL Mainnet Snap: networks, token list, market data, swap quotes, CCIP and Trustless bridge routes for MetaMask.",
   "homepage": "https://github.com/bis-innovations/chain138-snap#readme",
   "bugs": {
     "url": "https://github.com/bis-innovations/chain138-snap/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bis-innovations/chain138-snap.git"
   },
   "license": "(MIT-0 OR Apache-2.0)",
   "main": "./dist/bundle.js",
@@ -39,6 +39,7 @@
     "@metamask/providers": "^22.1.0",
     "@metamask/snaps-cli": "^8.3.0",
     "@metamask/snaps-jest": "^9.8.0",
+    "@types/jest": "^29.5.0",
     "@types/react": "18.2.4",
     "@types/react-dom": "18.2.4",
     "eslint": "^9.39.2",

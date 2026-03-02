@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Accounts Example - ChainID 138</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            margin-top: 0;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        button:hover:not(:disabled) {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .error {
+            background-color: #f44336;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .success {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .info {
+            background-color: #2196F3;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .address {
+            word-break: break-all;
+            font-family: monospace;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart Accounts Example</h1>
+    <p><strong>ChainID 138 - SMOM-DBIS-138</strong></p>
+
+    <div id="error" class="error" style="display: none;"></div>
+    <div id="success" class="success" style="display: none;"></div>
+    <div id="info" class="info" style="display: none;"></div>
+
+    <div class="container">
+        <h2>1. Connect Wallet</h2>
+        <p>Connect your MetaMask wallet to get started.</p>
+        <button id="connectBtn" onclick="connectWallet()">Connect MetaMask</button>
+        <div id="walletInfo" style="display: none;">
+            <p><strong>Connected Address:</strong></p>
+            <div class="address" id="userAddress"></div>
+        </div>
+    </div>
+
+    <div class="container" id="smartAccountSection" style="display: none;">
+        <h2>2. Create Smart Account</h2>
+        <p>Create a new Smart Account linked to your wallet.</p>
+        <button id="createAccountBtn" onclick="createSmartAccount()">Create Smart Account</button>
+        <div id="accountInfo" style="display: none;">
+            <p><strong>Smart Account Address:</strong></p>
+            <div class="address" id="accountAddress"></div>
+            <p><strong>Owner:</strong></p>
+            <div class="address" id="accountOwner"></div>
+        </div>
+    </div>
+
+    <div class="container" id="delegationSection" style="display: none;">
+        <h2>3. Request Delegation</h2>
+        <p>Request delegation for a dApp or service to execute transactions on your behalf.</p>
+        <label for="targetAddress">Target Address:</label>
+        <input type="text" id="targetAddress" placeholder="0x..." style="width: 100%; padding: 8px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px;">
+        <button id="requestDelegationBtn" onclick="requestDelegation()">Request Delegation</button>
+        <div id="delegationInfo" style="display: none;">
+            <p><strong>Delegation Status:</strong></p>
+            <div id="delegationStatus"></div>
+        </div>
+    </div>
+
+    <div class="container" id="batchSection" style="display: none;">
+        <h2>4. Batch Operations</h2>
+        <p>Execute multiple operations in a single transaction.</p>
+        <button id="batchBtn" onclick="batchOperations()">Execute Batch</button>
+        <div id="batchInfo" style="display: none;">
+            <p><strong>Batch Transaction:</strong></p>
+            <div class="address" id="batchTx"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Note: This is a simplified example. In production, you would:
+        // 1. Use a bundler (webpack, vite, etc.)
+        // 2. Import SmartAccountsKit properly
+        // 3. Handle errors more gracefully
+        // 4. Add proper TypeScript types
+
+        // For this HTML example, we'll use a simplified approach
+        // In production, use the React or Vue examples instead
+
+        let userAddress = '';
+        let smartAccountAddress = '';
+        let smartAccountsKit = null;
+
+        // Check if MetaMask is installed
+        if (typeof window.ethereum === 'undefined') {
+            showError('MetaMask is not installed. Please install MetaMask to continue.');
+            document.getElementById('connectBtn').disabled = true;
+        }
+
+        // Load configuration (in production, this would be from a config file)
+        const config = {
+            chainId: 138,
+            rpcUrl: 'https://rpc.d-bis.org',
+            entryPointAddress: '', // Set after deployment
+            accountFactoryAddress: '', // Set after deployment
+        };
+
+        window.connectWallet = async function() {
+            try {
+                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                userAddress = accounts[0];
+                
+                document.getElementById('userAddress').textContent = userAddress;
+                document.getElementById('walletInfo').style.display = 'block';
+                document.getElementById('smartAccountSection').style.display = 'block';
+                
+                showSuccess('Wallet connected successfully!');
+            } catch (error) {
+                showError('Failed to connect wallet: ' + error.message);
+            }
+        };
+
+        window.createSmartAccount = async function() {
+            try {
+                showInfo('Creating Smart Account...');
+                
+                // In production, use SmartAccountsKit:
+                // const kit = new SmartAccountsKit(config);
+                // const account = await kit.createAccount({ owner: userAddress });
+                
+                // For demo purposes, we'll simulate:
+                smartAccountAddress = '0x' + Array.from({length: 40}, () => Math.floor(Math.random() * 16).toString(16)).join('');
+                
+                document.getElementById('accountAddress').textContent = smartAccountAddress;
+                document.getElementById('accountOwner').textContent = userAddress;
+                document.getElementById('accountInfo').style.display = 'block';
+                document.getElementById('delegationSection').style.display = 'block';
+                document.getElementById('batchSection').style.display = 'block';
+                
+                showSuccess('Smart Account created successfully!');
+            } catch (error) {
+                showError('Failed to create Smart Account: ' + error.message);
+            }
+        };
+
+        window.requestDelegation = async function() {
+            const target = document.getElementById('targetAddress').value;
+            if (!target || !target.startsWith('0x')) {
+                showError('Please enter a valid target address');
+                return;
+            }
+            
+            try {
+                showInfo('Requesting delegation...');
+                
+                // In production, use SmartAccountsKit:
+                // const delegation = await kit.requestDelegation({ target, permissions: [...], expiry: ... });
+                
+                // For demo purposes, we'll simulate:
+                document.getElementById('delegationStatus').innerHTML = `
+                    <strong>Target:</strong> ${target}<br>
+                    <strong>Status:</strong> Approved<br>
+                    <strong>Expires:</strong> ${new Date(Date.now() + 86400000).toLocaleString()}
+                `;
+                document.getElementById('delegationInfo').style.display = 'block';
+                
+                showSuccess('Delegation requested successfully!');
+            } catch (error) {
+                showError('Failed to request delegation: ' + error.message);
+            }
+        };
+
+        window.batchOperations = async function() {
+            try {
+                showInfo('Executing batch operations...');
+                
+                // In production, use SmartAccountsKit:
+                // const userOps = await kit.batchUserOperations([...]);
+                // const result = await kit.executeBatch(userOps);
+                
+                // For demo purposes, we'll simulate:
+                const txHash = '0x' + Array.from({length: 64}, () => Math.floor(Math.random() * 16).toString(16)).join('');
+                document.getElementById('batchTx').textContent = txHash;
+                document.getElementById('batchInfo').style.display = 'block';
+                
+                showSuccess('Batch operations executed successfully!');
+            } catch (error) {
+                showError('Failed to execute batch: ' + error.message);
+            }
+        };
+
+        function showError(message) {
+            const el = document.getElementById('error');
+            el.textContent = message;
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 5000);
+        }
+
+        function showSuccess(message) {
+            const el = document.getElementById('success');
+            el.textContent = message;
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 5000);
+        }
+
+        function showInfo(message) {
+            const el = document.getElementById('info');
+            el.textContent = message;
+            el.style.display = 'block';
+            setTimeout(() => el.style.display = 'none', 3000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "smartAccounts": {
+    "enabled": true,
+    "tracking": {
+      "accountCreations": {
+        "enabled": true,
+        "events": ["account_created", "account_creation_failed"]
+      },
+      "delegations": {
+        "enabled": true,
+        "events": ["delegation_requested", "delegation_granted", "delegation_revoked", "delegation_expired"]
+      },
+      "permissions": {
+        "enabled": true,
+        "events": ["permission_requested", "permission_granted", "permission_revoked"]
+      },
+      "userOperations": {
+        "enabled": true,
+        "events": ["batch_created", "batch_executed", "batch_failed"]
+      },
+      "gasUsage": {
+        "enabled": true,
+        "trackAverage": true,
+        "trackPeak": true
+      }
+    },
+    "metrics": {
+      "accountCreationRate": {
+        "enabled": true,
+        "window": "1h"
+      },
+      "delegationGrantRate": {
+        "enabled": true,
+        "window": "1h"
+      },
+      "permissionGrantRate": {
+        "enabled": true,
+        "window": "1h"
+      },
+      "averageGasUsage": {
+        "enabled": true,
+        "window": "24h"
+      },
+      "successRate": {
+        "enabled": true,
+        "window": "1h"
+      }
+    }
+  },
+  "endpoints": {
+    "analytics": "https://analytics.d-bis.org",
+    "events": "https://events.d-bis.org/api/v1/events"
+  },
+  "privacy": {
+    "anonymize": true,
+    "retentionDays": 90
+  }
+}

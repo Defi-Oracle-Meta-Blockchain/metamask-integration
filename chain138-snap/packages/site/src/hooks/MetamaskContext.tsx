@@ -5,11 +5,29 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import type { Snap } from '../types';
 import { getSnapsProvider } from '../utils';
 
+/**
+ *
+ */
 type MetaMaskContextType = {
+  /**
+   *
+   */
   provider: MetaMaskInpageProvider | null;
+  /**
+   *
+   */
   installedSnap: Snap | null;
+  /**
+   *
+   */
   error: Error | null;
+  /**
+   *
+   */
   setInstalledSnap: (snap: Snap | null) => void;
+  /**
+   *
+   */
   setError: (error: Error) => void;
 };
 
@@ -17,9 +35,15 @@ export const MetaMaskContext = createContext<MetaMaskContextType>({
   provider: null,
   installedSnap: null,
   error: null,
+  /**
+   *
+   */
   setInstalledSnap: () => {
     /* no-op */
   },
+  /**
+   *
+   */
   setError: () => {
     /* no-op */
   },
@@ -32,7 +56,14 @@ export const MetaMaskContext = createContext<MetaMaskContextType>({
  * @param props.children - React component to be wrapped by the Provider.
  * @returns JSX.
  */
-export const MetaMaskProvider = ({ children }: { children: ReactNode }) => {
+export const MetaMaskProvider = ({
+  children,
+}: {
+  /**
+   *
+   */
+  children: ReactNode;
+}) => {
   const [provider, setProvider] = useState<MetaMaskInpageProvider | null>(null);
   const [installedSnap, setInstalledSnap] = useState<Snap | null>(null);
   const [error, setError] = useState<Error | null>(null);

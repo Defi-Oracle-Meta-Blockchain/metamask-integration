@@ -1,0 +1,161 @@
+name: Smart Accounts CI
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'metamask-integration/**'
+      - 'smom-dbis-138/contracts/smart-accounts/**'
+      - 'smom-dbis-138/test/smart-accounts/**'
+      - 'smom-dbis-138/script/smart-accounts/**'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'metamask-integration/**'
+      - 'smom-dbis-138/contracts/smart-accounts/**'
+      - 'smom-dbis-138/test/smart-accounts/**'
+      - 'smom-dbis-138/script/smart-accounts/**'
+
+jobs:
+  test-contracts:
+    name: Test Smart Accounts Contracts
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: smom-dbis-138
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      
+      - name: Install Foundry
+        uses: foundry-actions/foundry-toolchain@v1
+        with:
+          version: nightly
+      
+      - name: Install dependencies
+        run: |
+          forge install OpenZeppelin/openzeppelin-contracts --no-commit
+          forge install OpenZeppelin/openzeppelin-contracts-upgradeable --no-commit
+      
+      - name: Run Smart Accounts tests
+        run: |
+          forge test --match-path test/smart-accounts/** -vv
+        env:
+          FOUNDRY_PROFILE: ci
+      
+      - name: Generate coverage report
+        run: |
+          forge coverage --match-path test/smart-accounts/** --report lcov
+        continue-on-error: true
+      
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./lcov.info
+          flags: smart-accounts
+          name: smart-accounts-coverage
+
+  test-integration:
+    name: Test Smart Accounts Integration
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: metamask-integration
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run integration tests
+        run: npm test -- test/smart-accounts-integration.test.ts
+        env:
+          RPC_URL_138: ${{ secrets.RPC_URL_138 }}
+          ENTRY_POINT: ${{ secrets.ENTRY_POINT }}
+          ACCOUNT_FACTORY: ${{ secrets.ACCOUNT_FACTORY }}
+        continue-on-error: true
+
+  lint-contracts:
+    name: Lint Smart Accounts Contracts
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: smom-dbis-138
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      
+      - name: Install Foundry
+        uses: foundry-actions/foundry-toolchain@v1
+      
+      - name: Run Solidity linter
+        run: |
+          forge fmt --check contracts/smart-accounts/
+        continue-on-error: true
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: smom-dbis-138
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      
+      - name: Install Foundry
+        uses: foundry-actions/foundry-toolchain@v1
+      
+      - name: Run Slither
+        uses: crytic/slither-action@v0
+        with:
+          target: 'contracts/smart-accounts'
+          slither-args: '--exclude-informational --exclude-optimization'
+        continue-on-error: true
+      
+      - name: Run Mythril
+        run: |
+          pip install mythril
+          myth analyze contracts/smart-accounts/AccountWalletRegistryExtended.sol
+        continue-on-error: true
+
+  verify-deployment:
+    name: Verify Deployment Scripts
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: smom-dbis-138
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      
+      - name: Install Foundry
+        uses: foundry-actions/foundry-toolchain@v1
+      
+      - name: Verify deployment scripts compile
+        run: |
+          forge script script/smart-accounts/DeploySmartAccountsKit.s.sol --dry-run
+          forge script script/smart-accounts/DeployAccountWalletRegistryExtended.s.sol --dry-run
+        env:
+          PRIVATE_KEY: ${{ secrets.TEST_PRIVATE_KEY }}
+          RPC_URL_138: ${{ secrets.RPC_URL_138 }}

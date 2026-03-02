@@ -1,6 +1,6 @@
 # Chain 138 Snap — Integrator guide
 
-Use this Snap from your dApp to provide Chain 138 (and ALL Mainnet) network params, token list, market data, swap quotes, and bridge routes inside MetaMask.
+Use this Snap from your dApp to provide Chain 138 (and ALL Mainnet) network params, token list, market data, swap quotes, and bridge routes (CCIP and Trustless) inside MetaMask.
 
 ## Production Snap ID
 
@@ -35,11 +35,11 @@ params: {
 
 You can pass these instead of or in addition to `apiBaseUrl` for specific data:
 
-| Param           | Purpose              | Used by RPCs                          |
-|----------------|----------------------|--------------------------------------|
-| `networksUrl`  | JSON URL for networks| `get_networks`, `get_chain138_config` |
-| `tokenListUrl` | JSON URL for tokens  | `get_token_list`, `get_token_list_url`|
-| `bridgeListUrl`| JSON URL for bridge  | `get_bridge_routes`, `show_bridge_routes` |
+| Param           | Purpose               | Used by RPCs                              |
+| --------------- | --------------------- | ----------------------------------------- |
+| `networksUrl`   | JSON URL for networks | `get_networks`, `get_chain138_config`     |
+| `tokenListUrl`  | JSON URL for tokens   | `get_token_list`, `get_token_list_url`    |
+| `bridgeListUrl` | JSON URL for bridge   | `get_bridge_routes`, `show_bridge_routes` |
 
 ## Companion site env
 

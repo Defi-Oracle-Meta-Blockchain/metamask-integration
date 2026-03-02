@@ -20,13 +20,17 @@ export const useMetaMask = () => {
 
   /**
    * Detect if the version of MetaMask is Flask.
+   * web3_clientVersion returns a string (e.g. "MetaMask/v11.0.0-flask").
    */
   const detectFlask = async () => {
     const clientVersion = await request({
       method: 'web3_clientVersion',
     });
 
-    const isFlaskDetected = (clientVersion as string[])?.includes('flask');
+    const versionStr = Array.isArray(clientVersion)
+      ? (clientVersion as string[]).join(' ')
+      : String(clientVersion ?? '');
+    const isFlaskDetected = versionStr.toLowerCase().includes('flask');
 
     setIsFlask(isFlaskDetected);
   };
@@ -43,6 +47,9 @@ export const useMetaMask = () => {
   };
 
   useEffect(() => {
+    /**
+     *
+     */
     const detect = async () => {
       if (provider) {
         await detectFlask();

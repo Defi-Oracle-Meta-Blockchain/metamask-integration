@@ -14,10 +14,21 @@ const Wrapper = styled.div`
   max-width: 100vw;
 `;
 
+/**
+ *
+ */
 export type AppProps = {
+  /**
+   *
+   */
   children: ReactNode;
 };
 
+/**
+ *
+ * @param options0
+ * @param options0.children
+ */
 export const App: FunctionComponent<AppProps> = ({ children }) => {
   const toggleTheme = useContext(ToggleThemeContext);
 

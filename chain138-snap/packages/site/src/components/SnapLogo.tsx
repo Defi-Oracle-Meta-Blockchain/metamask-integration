@@ -1,8 +1,20 @@
+/**
+ *
+ * @param options0
+ * @param options0.color
+ * @param options0.size
+ */
 export const SnapLogo = ({
   color,
   size,
 }: {
+  /**
+   *
+   */
   color?: string | undefined;
+  /**
+   *
+   */
   size: number;
 }) => (
   <svg

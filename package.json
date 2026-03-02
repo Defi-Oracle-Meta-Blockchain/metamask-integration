@@ -1,0 +1,35 @@
+{
+  "name": "metamask-integration-smart-accounts",
+  "version": "1.0.0",
+  "description": "MetaMask Smart Accounts Kit integration for ChainID 138",
+  "main": "index.js",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "install-sdk": "pnpm add @metamask/smart-accounts-kit",
+    "test": "pnpm exec node provider/test-integration.mjs",
+    "test:integration": "./scripts/integration-test-all.sh",
+    "test:all": "pnpm run test && pnpm run test:integration",
+    "run-all": "./scripts/run-all.sh",
+    "build": "tsc",
+    "ramps:serve": "node dist/ramps/server.js",
+    "ramps:dev": "ts-node src/ramps/server.ts"
+  },
+  "keywords": [
+    "metamask",
+    "smart-accounts",
+    "chainid-138",
+    "web3"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@metamask/smart-accounts-kit": "^0.3.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

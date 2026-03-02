@@ -3,9 +3,21 @@ import type { SnapConfirmationInterface } from '@metamask/snaps-jest';
 import { installSnap } from '@metamask/snaps-jest';
 import { Box, Text, Bold } from '@metamask/snaps-sdk/jsx';
 
+/**
+ *
+ */
 type SnapsJestExpect = {
+  /**
+   *
+   */
   toRender: (expected: unknown) => void;
+  /**
+   *
+   */
   toRespondWith: (expected: unknown) => void;
+  /**
+   *
+   */
   toRespondWithError: (expected: unknown) => void;
 };
 
@@ -36,7 +48,9 @@ describe('onRpcRequest', () => {
 
       await ui.ok();
 
-      (expect(await response) as unknown as SnapsJestExpect).toRespondWith(true);
+      (expect(await response) as unknown as SnapsJestExpect).toRespondWith(
+        true,
+      );
     });
   });
 

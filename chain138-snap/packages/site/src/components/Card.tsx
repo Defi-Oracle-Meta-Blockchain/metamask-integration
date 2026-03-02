@@ -1,18 +1,45 @@
 import type { ReactNode } from 'react';
 import styled from 'styled-components';
 
+/**
+ *
+ */
 type CardProps = {
+  /**
+   *
+   */
   content: {
+    /**
+     *
+     */
     title?: string;
+    /**
+     *
+     */
     description: ReactNode;
+    /**
+     *
+     */
     button?: ReactNode;
   };
+  /**
+   *
+   */
   disabled?: boolean;
+  /**
+   *
+   */
   fullWidth?: boolean;
 };
 
 const CardWrapper = styled.div<{
+  /**
+   *
+   */
   fullWidth?: boolean | undefined;
+  /**
+   *
+   */
   disabled?: boolean | undefined;
 }>`
   display: flex;
@@ -48,6 +75,13 @@ const Description = styled.div`
   margin-bottom: 2.4rem;
 `;
 
+/**
+ *
+ * @param options0
+ * @param options0.content
+ * @param options0.disabled
+ * @param options0.fullWidth
+ */
 export const Card = ({ content, disabled = false, fullWidth }: CardProps) => {
   const { title, description, button } = content;
   return (

@@ -12,12 +12,12 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Template Snap',
+        name: 'Chain 138 Snap',
         icon: 'src/assets/logo.svg',
-        /* eslint-disable @typescript-eslint/naming-convention */
+
         theme_color: '#6F4CFF',
         background_color: '#FFFFFF',
-        /* eslint-enable @typescript-eslint/naming-convention */
+
         display: 'standalone',
       },
     },

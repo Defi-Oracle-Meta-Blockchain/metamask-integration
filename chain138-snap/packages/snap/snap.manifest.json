@@ -1,13 +1,13 @@
 {
-  "version": "0.1.1",
-  "description": "Chain 138 (DeFi Oracle Meta Mainnet) and ALL Mainnet: networks, token list, market data, swap quotes, and CCIP bridge routes for MetaMask.",
+  "version": "0.1.2",
+  "description": "Chain 138 (DeFi Oracle Meta Mainnet) and ALL Mainnet: networks, token list, market data, swap quotes, and CCIP and Trustless bridge routes for MetaMask.",
   "proposedName": "Chain 138",
   "repository": {
     "type": "git",
     "url": "https://github.com/bis-innovations/chain138-snap.git"
   },
   "source": {
-    "shasum": "6CuMlWe0q/GCAHp8l6U+niT/Um5DHEYex4GPhbs5bkg=",
+    "shasum": "8GYAFlgbiR/jXAwnprqqE4jTIvQv/Uhkn3MiH23g/tQ=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
