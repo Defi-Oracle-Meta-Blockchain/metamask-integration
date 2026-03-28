@@ -39,12 +39,38 @@ const PoweredByContainer = styled.div`
   margin-left: 1rem;
 `;
 
+const LegalColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 16rem;
+`;
+
+const SectionTitle = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.small};
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: ${({ theme }) => theme.colors.text?.muted};
+  margin-bottom: 0.4rem;
+`;
+
+const FooterLink = styled.a`
+  color: ${({ theme }) => theme.colors.text?.default};
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 /**
- *
+ * @returns The Snap footer with brand, legal links, and build metadata.
  */
 export const Footer = () => {
   const theme = useTheme();
   const buildVersion = getBuildVersion();
+  const currentYear = new Date().getFullYear();
 
   return (
     <FooterWrapper>
@@ -55,6 +81,27 @@ export const Footer = () => {
           <MetaMask color={theme.colors.text?.default} />
         </PoweredByContainer>
       </PoweredByButton>
+      <LegalColumn>
+        <SectionTitle>Explorer</SectionTitle>
+        <FooterLink href="https://explorer.d-bis.org/docs.html">
+          Documentation
+        </FooterLink>
+        <FooterLink href="https://explorer.d-bis.org/privacy.html">
+          Privacy Policy
+        </FooterLink>
+        <FooterLink href="https://explorer.d-bis.org/terms.html">
+          Terms of Service
+        </FooterLink>
+        <FooterLink href="https://explorer.d-bis.org/acknowledgments.html">
+          Acknowledgments
+        </FooterLink>
+        <FooterLink href="mailto:support@d-bis.org">
+          support@d-bis.org
+        </FooterLink>
+      </LegalColumn>
+      <VersionSpan title="Copyright">
+        © {currentYear} Solace Bank Group PLC
+      </VersionSpan>
       {buildVersion ? (
         <VersionSpan title="Build version">v{buildVersion}</VersionSpan>
       ) : null}
