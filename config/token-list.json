@@ -2,21 +2,227 @@
   "name": "SMOM-DBIS-138 Token List",
   "version": {
     "major": 1,
-    "minor": 4,
+    "minor": 5,
     "patch": 0
   },
-  "timestamp": "2026-02-28T00:00:00.000Z",
+  "timestamp": "2026-04-04T04:23:53.362Z",
+  "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/chain138-list.svg",
+  "keywords": [
+    "chain138",
+    "dbis",
+    "defi-oracle-meta",
+    "metamask"
+  ],
   "tokens": [
     {
       "chainId": 138,
-      "address": "0x3304b747E565a97ec8AC220b0B6A1f6ffDB837e6",
+      "address": "0xD51482e567c03899eecE3CAe8a058161FD56069D",
+      "name": "Australian Dollar (Compliant)",
+      "symbol": "cAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x54dBd40cF05e15906A2C21f600937e96787f5679",
+      "name": "Canadian Dollar (Compliant)",
+      "symbol": "cCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x873990849DDa5117d7C644f0aF24370797C03885",
+      "name": "Swiss Franc (Compliant)",
+      "symbol": "cCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x8085961F9cF02b4d800A3c6d386D31da4B34266a",
+      "name": "Euro Coin (Compliant)",
+      "symbol": "cEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xdf4b71c61E5912712C1Bdd451416B9aC26949d72",
+      "name": "Tether EUR (Compliant)",
+      "symbol": "cEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x003960f16D9d34F2e98d62723B6721Fb92074aD2",
+      "name": "Pound Sterling (Compliant)",
+      "symbol": "cGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x350f54e4D23795f86A9c03988c7135357CCaD97c",
+      "name": "Tether GBP (Compliant)",
+      "symbol": "cGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xEe269e1226a334182aace90056EE4ee5Cc8A6770",
+      "name": "Japanese Yen (Compliant)",
+      "symbol": "cJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xf22258f57794CC8E06237084b353Ab30fFfa640b",
+      "name": "Compliant USD Coin",
+      "symbol": "cUSDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cUSDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x93E66202A11B1772E55407B32B44e5Cd8eda7f22",
+      "name": "Compliant Tether USD",
+      "symbol": "cUSDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cUSDT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x290E52a8819A4fbD0714E517225429aA2B70EC6b",
+      "name": "Gold (Compliant)",
+      "symbol": "cXAUC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cXAUC.svg",
+      "tags": [
+        "defi",
+        "compliant"
+      ],
+      "extensions": {
+        "unitOfAccount": "troy_ounce",
+        "unitDescription": "1 full token (10^decimals base units) = 1 troy oz fine gold"
+      }
+    },
+    {
+      "chainId": 138,
+      "address": "0x94e408E26c6FD8F4ee00b54dF19082FDA07dC96E",
+      "name": "Tether XAU (Compliant)",
+      "symbol": "cXAUT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cXAUT.svg",
+      "tags": [
+        "defi",
+        "compliant"
+      ],
+      "extensions": {
+        "unitOfAccount": "troy_ounce",
+        "unitDescription": "1 full token (10^decimals base units) = 1 troy oz fine gold"
+      }
+    },
+    {
+      "chainId": 138,
+      "address": "0x3304b747e565a97ec8ac220b0b6a1f6ffdb837e6",
       "name": "ETH/USD Price Feed",
       "symbol": "ETH-USD",
       "decimals": 8,
       "logoURI": "https://ipfs.io/ipfs/QmPZuycjyJEe2otREuQ5HirvPJ8X6Yc6MBtwz1VhdD79pY",
       "tags": [
         "oracle",
-        "pricefeed"
+        "price-feed"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xb7721dD53A8c629d9f1Ba31a5819AFe250002b03",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x71D6687F38b93CCad569Fa6352c876eea967201b",
+      "name": "USD Coin (Official Mirror)",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x004b63A7B5b0E06f6bB6adb4a5F9f590BF3182D1",
+      "name": "Tether USD (Official Mirror)",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
       ]
     },
     {
@@ -41,45 +247,6 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
-    },
-    {
-      "chainId": 138,
-      "address": "0xb7721dD53A8c629d9f1Ba31a5819AFe250002b03",
-      "name": "Chainlink Token",
-      "symbol": "LINK",
-      "decimals": 18,
-      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-      "tags": [
-        "defi",
-        "oracle",
-        "ccip"
-      ]
-    },
-    {
-      "chainId": 138,
-      "address": "0x93E66202A11B1772E55407B32B44e5Cd8eda7f22",
-      "name": "Compliant Tether USD",
-      "symbol": "cUSDT",
-      "decimals": 6,
-      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-      "tags": [
-        "stablecoin",
-        "defi",
-        "compliant"
-      ]
-    },
-    {
-      "chainId": 138,
-      "address": "0xf22258f57794CC8E06237084b353Ab30fFfa640b",
-      "name": "Compliant USD Coin",
-      "symbol": "cUSDC",
-      "decimals": 6,
-      "logoURI": "https://ipfs.io/ipfs/QmNPq4D5JXzurmi9jAhogVMzhAQRk1PZ1r9H3qQUV9gjDm",
-      "tags": [
-        "stablecoin",
-        "defi",
-        "compliant"
       ]
     }
   ]

@@ -1,859 +1,2565 @@
 {
-"name": "Multi-Chain Token List (13 chains, 138 base)",
-"version": {
-"major": 1,
-"minor": 3,
-"patch": 0
-},
-"timestamp": "2026-02-28T00:00:00.000Z",
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tokens": [
-{
-"chainId": 138,
-"address": "0x3304b747e565a97ec8ac220b0b6a1f6ffdb837e6",
-"name": "ETH/USD Price Feed",
-"symbol": "ETH-USD",
-"decimals": 8,
-"logoURI": "https://ipfs.io/ipfs/QmPZuycjyJEe2otREuQ5HirvPJ8X6Yc6MBtwz1VhdD79pY",
-"tags": [
-"oracle",
-"price-feed"
-]
-},
-{
-"chainId": 138,
-"address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 138,
-"address": "0xf4BB2e28688e89fCcE3c0580D37d36A7672E8A9F",
-"name": "Wrapped Ether v10",
-"symbol": "WETH10",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmanDFPHxnbKd6SSNzzXHf9GbpL9dLXSphxDZSPPYE6ds4",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 138,
-"address": "0xb7721dD53A8c629d9f1Ba31a5819AFe250002b03",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 138,
-"address": "0x93E66202A11B1772E55407B32B44e5Cd8eda7f22",
-"name": "Compliant Tether USD",
-"symbol": "cUSDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi",
-"compliant"
-]
-},
-{
-"chainId": 138,
-"address": "0xf22258f57794CC8E06237084b353Ab30fFfa640b",
-"name": "Compliant USD Coin",
-"symbol": "cUSDC",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmNPq4D5JXzurmi9jAhogVMzhAQRk1PZ1r9H3qQUV9gjDm",
-"tags": [
-"stablecoin",
-"defi",
-"compliant"
-]
-},
-{
-"chainId": 1,
-"address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 1,
-"address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 1,
-"address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 1,
-"address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 1,
-"address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-"name": "Dai Stablecoin",
-"symbol": "DAI",
-"decimals": 18,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 1,
-"address": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-"name": "ETH/USD Price Feed",
-"symbol": "ETH-USD",
-"decimals": 8,
-"logoURI": "https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png",
-"tags": [
-"oracle",
-"price-feed"
-]
-},
-{
-"chainId": 651940,
-"address": "0xa95EeD79f84E6A0151eaEb9d441F9Ffd50e8e881",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 651940,
-"address": "0x015B1897Ed5279930bC2Be46F661894d219292A6",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 25,
-"address": "0xc21223249CA28397B4B6541dfFaEcC539BfF0c59",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 25,
-"address": "0x66e4286603D22FF153A6547700f37C7Eae42F8E2",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 25,
-"address": "0x99B3511A2d315A497C8112C1fdd8D508d4B1E506",
-"name": "Wrapped Ether (WETH9)",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 25,
-"address": "0x3304b747E565a97ec8AC220b0B6A1f6ffDB837e6",
-"name": "Wrapped Ether v10",
-"symbol": "WETH10",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmanDFPHxnbKd6SSNzzXHf9GbpL9dLXSphxDZSPPYE6ds4",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 25,
-"address": "0x8c80A01F461f297Df7F9DA3A4f740D7297C8Ac85",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 25,
-"address": "0x948690147D2e50ffe50C5d38C14125aD6a9FA036",
-"name": "USD W Token",
-"symbol": "USDW",
-"decimals": 2,
-"logoURI": "https://ipfs.io/ipfs/QmNPq4D5JXzurmi9jAhogVMzhAQRk1PZ1r9H3qQUV9gjDm",
-"tags": [
-"stablecoin",
-"iso4217w"
-]
-},
-{
-"chainId": 25,
-"address": "0x58a8D8F78F1B65c06dAd7542eC46b299629A60dd",
-"name": "EUR W Token",
-"symbol": "EURW",
-"decimals": 2,
-"logoURI": "https://ipfs.io/ipfs/QmPh16PY241zNtePyeK7ep1uf1RcARV2ynGAuRU8U7sSqS",
-"tags": [
-"stablecoin",
-"iso4217w"
-]
-},
-{
-"chainId": 25,
-"address": "0xFb4B6Cc81211F7d886950158294A44C312abCA29",
-"name": "GBP W Token",
-"symbol": "GBPW",
-"decimals": 2,
-"logoURI": "https://ipfs.io/ipfs/QmT2nJ6WyhYBCsYJ6NfS1BPAqiGKkCEuMxiC8ye93Co1hF",
-"tags": [
-"stablecoin",
-"iso4217w"
-]
-},
-{
-"chainId": 25,
-"address": "0xf9f5D0ACD71C76F9476F10B3F3d3E201F0883C68",
-"name": "AUD W Token",
-"symbol": "AUDW",
-"decimals": 2,
-"logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
-"tags": [
-"stablecoin",
-"iso4217w"
-]
-},
-{
-"chainId": 25,
-"address": "0xeE17bB0322383fecCA2784fbE2d4CD7d02b1905B",
-"name": "JPY W Token",
-"symbol": "JPYW",
-"decimals": 2,
-"logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
-"tags": [
-"stablecoin",
-"iso4217w"
-]
-},
-{
-"chainId": 25,
-"address": "0xc9750828124D4c10e7a6f4B655cA8487bD3842EB",
-"name": "CHF W Token",
-"symbol": "CHFW",
-"decimals": 2,
-"logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
-"tags": [
-"stablecoin",
-"iso4217w"
-]
-},
-{
-"chainId": 25,
-"address": "0x328Cd365Bb35524297E68ED28c6fF2C9557d1363",
-"name": "CAD W Token",
-"symbol": "CADW",
-"decimals": 2,
-"logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
-"tags": [
-"stablecoin",
-"iso4217w"
-]
-},
-{
-"chainId": 56,
-"address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 56,
-"address": "0x55d398326f99059fF775485246999027B3197955",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 56,
-"address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 56,
-"address": "0x404460C6A5EdE2D891e8297795264fDe62ADBB75",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 56,
-"address": "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3",
-"name": "Dai Stablecoin",
-"symbol": "DAI",
-"decimals": 18,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 100,
-"address": "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 100,
-"address": "0x4ECaBa5870353805a9F068101A40E0f32ed605C6",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 100,
-"address": "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 100,
-"address": "0xE2e73A1c69ecF83F464EFCE6A5be353a37cA09b2",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 100,
-"address": "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
-"name": "Dai Stablecoin",
-"symbol": "DAI",
-"decimals": 18,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 137,
-"address": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c1369",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 137,
-"address": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 137,
-"address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 137,
-"address": "0xb0897686c545045aFc77CF20eC7A532E3120E0F1",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 137,
-"address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
-"name": "Dai Stablecoin",
-"symbol": "DAI",
-"decimals": 18,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 10,
-"address": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 10,
-"address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 10,
-"address": "0x4200000000000000000000000000000000000006",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 10,
-"address": "0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 10,
-"address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
-"name": "Dai Stablecoin",
-"symbol": "DAI",
-"decimals": 18,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 42161,
-"address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 42161,
-"address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 42161,
-"address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 42161,
-"address": "0xf97f4df75117a78c1A5a0DBb814Af92458539FB4",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 42161,
-"address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
-"name": "Dai Stablecoin",
-"symbol": "DAI",
-"decimals": 18,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 8453,
-"address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 8453,
-"address": "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 8453,
-"address": "0x4200000000000000000000000000000000000006",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 8453,
-"address": "0x88Fb150BDc53A65fe94Dea0c9BA0a6dAf8C6e196",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 8453,
-"address": "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb",
-"name": "Dai Stablecoin",
-"symbol": "DAI",
-"decimals": 18,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 43114,
-"address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 43114,
-"address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 43114,
-"address": "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 43114,
-"address": "0x5947BB275c521040051D82396192181b413227A3",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 43114,
-"address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
-"name": "Dai Stablecoin",
-"symbol": "DAI",
-"decimals": 18,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 42220,
-"address": "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 42220,
-"address": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 42220,
-"address": "0x122013fd7dF1C6F636a5bb8f03108E876548b455",
-"name": "Wrapped Ether",
-"symbol": "WETH",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
-"tags": [
-"defi",
-"wrapped"
-]
-},
-{
-"chainId": 42220,
-"address": "0xd07294e6E917e07dfDcee882dd1e2565085C2ae0",
-"name": "Chainlink Token",
-"symbol": "LINK",
-"decimals": 18,
-"logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
-"tags": [
-"defi",
-"oracle",
-"ccip"
-]
-},
-{
-"chainId": 1111,
-"address": "0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
-"name": "USD Coin",
-"symbol": "USDC",
-"decimals": 6,
-"logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
-"tags": [
-"stablecoin",
-"defi"
-]
-},
-{
-"chainId": 1111,
-"address": "0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F",
-"name": "Tether USD",
-"symbol": "USDT",
-"decimals": 6,
-"logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
-"tags": [
-"stablecoin",
-"defi"
-]
-}
-],
-"tags": {
-"defi": {
-"name": "DeFi",
-"description": "Decentralized Finance tokens"
-},
-"wrapped": {
-"name": "Wrapped",
-"description": "Wrapped tokens representing native assets"
-},
-"oracle": {
-"name": "Oracle",
-"description": "Oracle price feed contracts"
-},
-"price-feed": {
-"name": "Price Feed",
-"description": "Price feed oracle contracts"
-},
-"stablecoin": {
-"name": "Stablecoin",
-"description": "Stable value tokens pegged to fiat"
-},
-"compliant": {
-"name": "Compliant",
-"description": "Regulatory compliant tokens"
-},
-"iso4217w": {
-"name": "ISO4217W",
-"description": "ISO 4217 compliant wrapped fiat tokens"
-}
-}
+  "name": "Multi-Chain Token List (13 chains, 138 base)",
+  "version": {
+    "major": 1,
+    "minor": 3,
+    "patch": 4
+  },
+  "timestamp": "2026-04-04T04:23:46.263Z",
+  "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/chain138-list.svg",
+  "keywords": [
+    "chain138",
+    "defi-oracle-meta",
+    "multichain",
+    "metamask",
+    "wallet"
+  ],
+  "tags": {
+    "defi": {
+      "name": "DeFi",
+      "description": "Decentralized Finance tokens"
+    },
+    "bridge": {
+      "name": "Bridge",
+      "description": "Tokens bridged to other chains such as Truth Network"
+    },
+    "wrapped": {
+      "name": "Wrapped",
+      "description": "Wrapped tokens representing native assets"
+    },
+    "oracle": {
+      "name": "Oracle",
+      "description": "Oracle price feed tokens"
+    },
+    "price-feed": {
+      "name": "Price Feed",
+      "description": "Price feed oracle tokens"
+    },
+    "stablecoin": {
+      "name": "Stablecoin",
+      "description": "Stable value tokens pegged to fiat"
+    },
+    "compliant": {
+      "name": "Compliant",
+      "description": "Regulatory compliant assets"
+    },
+    "iso4217w": {
+      "name": "ISO4217W",
+      "description": "ISO 4217 compliant wrapped fiat tokens"
+    }
+  },
+  "extensions": {
+    "defaultChainId": 138,
+    "explorerUrl": "https://explorer.d-bis.org",
+    "networksConfigUrl": "https://explorer.d-bis.org/api/config/networks"
+  },
+  "tokens": [
+    {
+      "chainId": 1,
+      "address": "0x5020Db641B3Fc0dAbBc0c688C845bc4E3699f35F",
+      "name": "Australian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x209FE32fe7B541751D190ae4e50cd005DcF8EDb4",
+      "name": "Canadian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x0F91C5E6Ddd46403746aAC970D05d70FFe404780",
+      "name": "Swiss Franc (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xD4aEAa8cD3fB41Dc8437FaC7639B6d91B60A5e8d",
+      "name": "Euro Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x855d74FFB6CF75721a9bAbc8B2ed35c8119241dC",
+      "name": "Tether EUR (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xc074007dc0Bfb384B1cf6426a56287Ed23FE4D52",
+      "name": "Pound Sterling (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x1dDF9970F01c76A692Fdba2706203E6f16e0C46F",
+      "name": "Tether GBP (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x07EEd0D7dD40984e47B9D3a3bdded1c536435582",
+      "name": "Japanese Yen (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x2de5F116bFcE3d0f922d9C8351e0c5Fc24b9284a",
+      "name": "USD Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xaF5017d0163ecb99D9B5D94e3b4D7b09Af44D8AE",
+      "name": "Tether USD (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x572Be0fa8CA0534d642A567CEDb398B771D8a715",
+      "name": "Gold (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xACE1DBF857549a11aF1322e1f91F2F64b029c906",
+      "name": "Tether XAU (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+      "name": "ETH/USD Price Feed",
+      "symbol": "ETH-USD",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png",
+      "tags": [
+        "oracle",
+        "price-feed"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xDAe0faFD65385E7775Cf75b1398735155EF6aCD2",
+      "name": "Truth Network Token",
+      "symbol": "TRUU",
+      "decimals": 10,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "bridge"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 1,
+      "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x25603ae4bff0b71d637b3573d1b6657f5f6d17ef",
+      "name": "Australian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x9f6d2578003fe04e58a9819a4943732f2a203a61",
+      "name": "Canadian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x4d9bc6c74ba65e37c4139f0aec9fc5ddff28dcc4",
+      "name": "Swiss Franc (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x4ab39b5bab7b463435209a9039bd40cf241f5a82",
+      "name": "Euro Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x6f521cd9fcf7884cd4e9486c7790e818638e09dd",
+      "name": "Tether EUR (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x3f8c409c6072a2b6a4ff17071927ba70f80c725f",
+      "name": "Pound Sterling (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x456373d095d6b9260f01709f93fccf1d8aa14d11",
+      "name": "Tether GBP (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x8e54c52d34a684e22865ac9f2d7c27c30561a7b9",
+      "name": "Japanese Yen (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x377a5FaA3162b3Fc6f4e267301A3c817bAd18105",
+      "name": "USD Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x04B2AE3c3bb3d70Df506FAd8717b0FBFC78ED7E6",
+      "name": "Tether USD (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0xddc4063f770f7c49d00b5a10fb552e922aa39b2c",
+      "name": "Gold (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x145e8e8c49b6a021969dd9d2c01c8fea44374f61",
+      "name": "Tether XAU (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 10,
+      "address": "0x4200000000000000000000000000000000000006",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xf9f5D0ACD71C76F9476F10B3F3d3E201F0883C68",
+      "name": "AUD W Token",
+      "symbol": "AUDW",
+      "decimals": 2,
+      "logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
+      "tags": [
+        "stablecoin",
+        "iso4217w"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x328Cd365Bb35524297E68ED28c6fF2C9557d1363",
+      "name": "CAD W Token",
+      "symbol": "CADW",
+      "decimals": 2,
+      "logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
+      "tags": [
+        "stablecoin",
+        "iso4217w"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xc9750828124D4c10e7a6f4B655cA8487bD3842EB",
+      "name": "CHF W Token",
+      "symbol": "CHFW",
+      "decimals": 2,
+      "logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
+      "tags": [
+        "stablecoin",
+        "iso4217w"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xff3084410A732231472Ee9f93F5855dA89CC5254",
+      "name": "Australian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x32aD687F24F77bF8C86605c202c829163Ac5Ab36",
+      "name": "Canadian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xB55F49D6316322d5caA96D34C6e4b1003BD3E670",
+      "name": "Swiss Franc (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x7574d37F42528B47c88962931e48FC61608a4050",
+      "name": "Euro Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x9f833b4f1012F52eb3317b09922a79c6EdFca77D",
+      "name": "Tether EUR (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xe5c65A76A541368d3061fe9E7A2140cABB903dbF",
+      "name": "Pound Sterling (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xBb58fa16bAc8E789f09C14243adEE6480D8213A2",
+      "name": "Tether GBP (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x52aD62B8bD01154e2A4E067F8Dc4144C9988d203",
+      "name": "Japanese Yen (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x932566E5bB6BEBF6B035B94f3DE1f75f126304Ec",
+      "name": "USD Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x72948a7a813B60b37Cd0c920C4657DbFF54312b8",
+      "name": "Tether USD (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xf1B771c95573113E993374c0c7cB2dc1a7908B12",
+      "name": "Gold (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xD517C0cF7013f988946A468c880Cc9F8e2A4BCbE",
+      "name": "Tether XAU (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x58a8D8F78F1B65c06dAd7542eC46b299629A60dd",
+      "name": "EUR W Token",
+      "symbol": "EURW",
+      "decimals": 2,
+      "logoURI": "https://ipfs.io/ipfs/QmPh16PY241zNtePyeK7ep1uf1RcARV2ynGAuRU8U7sSqS",
+      "tags": [
+        "stablecoin",
+        "iso4217w"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xFb4B6Cc81211F7d886950158294A44C312abCA29",
+      "name": "GBP W Token",
+      "symbol": "GBPW",
+      "decimals": 2,
+      "logoURI": "https://ipfs.io/ipfs/QmT2nJ6WyhYBCsYJ6NfS1BPAqiGKkCEuMxiC8ye93Co1hF",
+      "tags": [
+        "stablecoin",
+        "iso4217w"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xeE17bB0322383fecCA2784fbE2d4CD7d02b1905B",
+      "name": "JPY W Token",
+      "symbol": "JPYW",
+      "decimals": 2,
+      "logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
+      "tags": [
+        "stablecoin",
+        "iso4217w"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x8c80A01F461f297Df7F9DA3A4f740D7297C8Ac85",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0xc21223249CA28397B4B6541dfFaEcC539BfF0c59",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x66e4286603D22FF153A6547700f37C7Eae42F8E2",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x948690147D2e50ffe50C5d38C14125aD6a9FA036",
+      "name": "USD W Token",
+      "symbol": "USDW",
+      "decimals": 2,
+      "logoURI": "https://ipfs.io/ipfs/QmNPq4D5JXzurmi9jAhogVMzhAQRk1PZ1r9H3qQUV9gjDm",
+      "tags": [
+        "stablecoin",
+        "iso4217w"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x99B3511A2d315A497C8112C1fdd8D508d4B1E506",
+      "name": "Wrapped Ether (WETH9)",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 25,
+      "address": "0x3304b747E565a97ec8AC220b0B6A1f6ffDB837e6",
+      "name": "Wrapped Ether v10",
+      "symbol": "WETH10",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmanDFPHxnbKd6SSNzzXHf9GbpL9dLXSphxDZSPPYE6ds4",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x7062f35567BBAb4d98dc33af03B0d14Df42294D5",
+      "name": "Australian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x9AE7a6B311584D60Fa93f973950d609061875775",
+      "name": "Canadian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0xD9f8710caeeBA3b3D423D7D14a918701426B5ef3",
+      "name": "Swiss Franc (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x50b073d0D1D2f002745cb9FC28a057d5be84911c",
+      "name": "Euro Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x1ED9E491A5eCd53BeF21962A5FCE24880264F63f",
+      "name": "Tether EUR (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x8b6EE72001cAFcb21D56a6c4686D6Db951d499A6",
+      "name": "Pound Sterling (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0xA6eFb8783C8ad2740ec880e46D4f7E608E893B1B",
+      "name": "Tether GBP (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x5fbCE65524211BC1bFb0309fd9EE09E786c6D097",
+      "name": "Japanese Yen (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x5355148C4740fcc3D7a96F05EdD89AB14851206b",
+      "name": "USD Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x9a1D0dBEE997929ED02fD19E0E199704d20914dB",
+      "name": "Tether USD (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0xCB145bA9A370681e3545F60e55621eBf218B1031",
+      "name": "Gold (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x73E0CF8BF861D376B3a4C87c136F975027f045ff",
+      "name": "Tether XAU (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x404460C6A5EdE2D891e8297795264fDe62ADBB75",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x55d398326f99059fF775485246999027B3197955",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 56,
+      "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0xddc4063f770f7c49d00b5a10fb552e922aa39b2c",
+      "name": "Australian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0xa7133c78e0ec74503a5941bcbd44257615b6b4f6",
+      "name": "Canadian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x46d90d7947f1139477c206c39268923b99cf09e4",
+      "name": "Swiss Franc (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x25603ae4bff0b71d637b3573d1b6657f5f6d17ef",
+      "name": "Euro Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x8e54c52d34a684e22865ac9f2d7c27c30561a7b9",
+      "name": "Tether EUR (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x4d9bc6c74ba65e37c4139f0aec9fc5ddff28dcc4",
+      "name": "Pound Sterling (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x9f6d2578003fe04e58a9819a4943732f2a203a61",
+      "name": "Tether GBP (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x145e8e8c49b6a021969dd9d2c01c8fea44374f61",
+      "name": "Japanese Yen (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0xd6969bC19b53f866C64f2148aE271B2Dae0C58E4",
+      "name": "USD Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x0cb0192C056aa425C557BdeAD8E56C7eEabf7acF",
+      "name": "Tether USD (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x23873b85cfeb343eb952618e8c9e9bfb7f6a0d45",
+      "name": "Gold (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0xc6189d404dc60cae7b48e2190e44770a03193e5f",
+      "name": "Tether XAU (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0xE2e73A1c69ecF83F464EFCE6A5be353a37cA09b2",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x4ECaBa5870353805a9F068101A40E0f32ed605C6",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 100,
+      "address": "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0xFb4B6Cc81211F7d886950158294A44C312abCA29",
+      "name": "Australian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0xc9750828124D4c10e7a6f4B655cA8487bD3842EB",
+      "name": "Canadian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0xeE17bB0322383fecCA2784fbE2d4CD7d02b1905B",
+      "name": "Swiss Franc (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0x3CD9ee18db7ad13616FCC1c83bC6098e03968E66",
+      "name": "Euro Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0xBeF5A0Bcc0E77740c910f197138cdD90F98d2427",
+      "name": "Tether EUR (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0x948690147D2e50ffe50C5d38C14125aD6a9FA036",
+      "name": "Pound Sterling (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0x58a8D8F78F1B65c06dAd7542eC46b299629A60dd",
+      "name": "Tether GBP (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0xf9f5D0ACD71C76F9476F10B3F3d3E201F0883C68",
+      "name": "Japanese Yen (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0xd6969bC19b53f866C64f2148aE271B2Dae0C58E4",
+      "name": "USD Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0x0cb0192C056aa425C557BdeAD8E56C7eEabf7acF",
+      "name": "Tether USD (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0x328Cd365Bb35524297E68ED28c6fF2C9557d1363",
+      "name": "Gold (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0x9e6044d730d4183bF7a666293d257d035Fba6d44",
+      "name": "Tether XAU (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0xb0897686c545045aFc77CF20eC7A532E3120E0F1",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 137,
+      "address": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xD51482e567c03899eecE3CAe8a058161FD56069D",
+      "name": "Australian Dollar (Compliant)",
+      "symbol": "cAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x54dBd40cF05e15906A2C21f600937e96787f5679",
+      "name": "Canadian Dollar (Compliant)",
+      "symbol": "cCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x873990849DDa5117d7C644f0aF24370797C03885",
+      "name": "Swiss Franc (Compliant)",
+      "symbol": "cCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x8085961F9cF02b4d800A3c6d386D31da4B34266a",
+      "name": "Euro Coin (Compliant)",
+      "symbol": "cEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xdf4b71c61E5912712C1Bdd451416B9aC26949d72",
+      "name": "Tether EUR (Compliant)",
+      "symbol": "cEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x003960f16D9d34F2e98d62723B6721Fb92074aD2",
+      "name": "Pound Sterling (Compliant)",
+      "symbol": "cGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x350f54e4D23795f86A9c03988c7135357CCaD97c",
+      "name": "Tether GBP (Compliant)",
+      "symbol": "cGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xEe269e1226a334182aace90056EE4ee5Cc8A6770",
+      "name": "Japanese Yen (Compliant)",
+      "symbol": "cJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xf22258f57794CC8E06237084b353Ab30fFfa640b",
+      "name": "Compliant USD Coin",
+      "symbol": "cUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x93E66202A11B1772E55407B32B44e5Cd8eda7f22",
+      "name": "Compliant Tether USD",
+      "symbol": "cUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x290E52a8819A4fbD0714E517225429aA2B70EC6b",
+      "name": "Gold (Compliant)",
+      "symbol": "cXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant"
+      ],
+      "extensions": {
+        "unitOfAccount": "troy_ounce",
+        "unitDescription": "1 full token (10^decimals base units) = 1 troy oz fine gold"
+      }
+    },
+    {
+      "chainId": 138,
+      "address": "0x94e408E26c6FD8F4ee00b54dF19082FDA07dC96E",
+      "name": "Tether XAU (Compliant)",
+      "symbol": "cXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant"
+      ],
+      "extensions": {
+        "unitOfAccount": "troy_ounce",
+        "unitDescription": "1 full token (10^decimals base units) = 1 troy oz fine gold"
+      }
+    },
+    {
+      "chainId": 138,
+      "address": "0x3304b747e565a97ec8ac220b0b6a1f6ffdb837e6",
+      "name": "ETH/USD Price Feed",
+      "symbol": "ETH-USD",
+      "decimals": 8,
+      "logoURI": "https://ipfs.io/ipfs/QmPZuycjyJEe2otREuQ5HirvPJ8X6Yc6MBtwz1VhdD79pY",
+      "tags": [
+        "oracle",
+        "price-feed"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xb7721dD53A8c629d9f1Ba31a5819AFe250002b03",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x71D6687F38b93CCad569Fa6352c876eea967201b",
+      "name": "USD Coin (Official Mirror)",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0x004b63A7B5b0E06f6bB6adb4a5F9f590BF3182D1",
+      "name": "Tether USD (Official Mirror)",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 138,
+      "address": "0xf4BB2e28688e89fCcE3c0580D37d36A7672E8A9F",
+      "name": "Wrapped Ether v10",
+      "symbol": "WETH10",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmanDFPHxnbKd6SSNzzXHf9GbpL9dLXSphxDZSPPYE6ds4",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 1111,
+      "address": "0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 1111,
+      "address": "0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0xa846aead3071df1b6439d5d813156ace7c2c1da1",
+      "name": "Australian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0xdc383c489533a4dd9a6bd3007386e25d5078b878",
+      "name": "Canadian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0xc1535e88578d984f12eab55863376b8d8b9fb05a",
+      "name": "Swiss Franc (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0xcb145ba9a370681e3545f60e55621ebf218b1031",
+      "name": "Euro Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x73e0cf8bf861d376b3a4c87c136f975027f045ff",
+      "name": "Tether EUR (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x2a0023ad5ce1ac6072b454575996dffb1bb11b16",
+      "name": "Pound Sterling (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x22b98130ab4d9c355512b25ade4c35e75a4e7e89",
+      "name": "Tether GBP (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x29828e9ab2057cd3df3c9211455ae1f76e53d2af",
+      "name": "Japanese Yen (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x377a5FaA3162b3Fc6f4e267301A3c817bAd18105",
+      "name": "USD Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x04B2AE3c3bb3d70Df506FAd8717b0FBFC78ED7E6",
+      "name": "Tether USD (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x7e4b4682453bcce19ec903fb69153d3031986bc4",
+      "name": "Gold (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0xcc6ae6016d564e9ab82aaff44d65e05a9b18951c",
+      "name": "Tether XAU (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x88Fb150BDc53A65fe94Dea0c9BA0a6dAf8C6e196",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x4200000000000000000000000000000000000006",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0xc1535e88578d984f12eab55863376b8d8b9fb05a",
+      "name": "Australian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0xcc6ae6016d564e9ab82aaff44d65e05a9b18951c",
+      "name": "Canadian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0x7e4b4682453bcce19ec903fb69153d3031986bc4",
+      "name": "Swiss Franc (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0x2a0023ad5ce1ac6072b454575996dffb1bb11b16",
+      "name": "Euro Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0x22b98130ab4d9c355512b25ade4c35e75a4e7e89",
+      "name": "Tether EUR (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0xa846aead3071df1b6439d5d813156ace7c2c1da1",
+      "name": "Pound Sterling (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0x29828e9ab2057cd3df3c9211455ae1f76e53d2af",
+      "name": "Tether GBP (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0xdc383c489533a4dd9a6bd3007386e25d5078b878",
+      "name": "Japanese Yen (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0x0cb0192C056aa425C557BdeAD8E56C7eEabf7acF",
+      "name": "USD Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0x73ADaF7dBa95221c080db5631466d2bC54f6a76B",
+      "name": "Tether USD (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0xa7762b63c4871581885ad17c5714ebb286a7480b",
+      "name": "Gold (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0x66568899ffe8f00b25dc470e878b65a478994e76",
+      "name": "Tether XAU (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0xf97f4df75117a78c1A5a0DBb814Af92458539FB4",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 42161,
+      "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 42220,
+      "address": "0xd07294e6E917e07dfDcee882dd1e2565085C2ae0",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 42220,
+      "address": "0xcebA9300f2b948710d2653dD7B07f33A8B32118C",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 42220,
+      "address": "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 42220,
+      "address": "0x122013fd7dF1C6F636a5bb8f03108E876548b455",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x04e1e22b0d41e99f4275bd40a50480219bc9a223",
+      "name": "Australian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWAUDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cAUDC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x1872e033b30f3ce0498847926857433e0146394e",
+      "name": "Canadian Dollar (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCADC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCADC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0xc2fa05f12a75ac84ea778af9d6935ca807275e55",
+      "name": "Swiss Franc (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWCHFC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cCHFC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x84353ed1f0c7a703a17abad19b0db15bc9a5e3e5",
+      "name": "Euro Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0xfc7d256e48253f7a7e08f0e55b9ff7039eb2524c",
+      "name": "Tether EUR (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWEURT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cEURT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0xbdf0c4ea1d81e8e769b0f41389a2c733e3ff723e",
+      "name": "Pound Sterling (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x4611d3424e059392a52b957e508273bc761c80f2",
+      "name": "Tether GBP (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWGBPT",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cGBPT.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x3714b1a312e0916c7dcdc4edf480fc0339e59a59",
+      "name": "Japanese Yen (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWJPYC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/cJPYC.svg",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x0C242b513008Cd49C89078F5aFb237A3112251EB",
+      "name": "USD Coin (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDC.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x8142BA530B08f3950128601F00DaaA678213DFdf",
+      "name": "Tether USD (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWUSDT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cUSDT.png",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x4f95297c23d9f4a1032b1c6a2e553225cb175bee",
+      "name": "Gold (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUC",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0xd2b4dbf2f6bd6704e066d752eec61fb0be953fd3",
+      "name": "Tether XAU (Compliant Wrapped ISO-4217 M1)",
+      "symbol": "cWXAUT",
+      "decimals": 6,
+      "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
+      "tags": [
+        "defi",
+        "compliant",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0xd586E7F844cEa2F87f50152665BCbc2C279D8d70",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x5947BB275c521040051D82396192181b413227A3",
+      "name": "Chainlink Token",
+      "symbol": "LINK",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/QmenWcmfNGfssz4HXvrRV912eZDiKqLTt6z2brRYuTGz9A",
+      "tags": [
+        "defi",
+        "oracle",
+        "ccip"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 43114,
+      "address": "0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 651940,
+      "address": "0xa95EeD79f84E6A0151eaEb9d441F9Ffd50e8e881",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 651940,
+      "address": "0x015B1897Ed5279930bC2Be46F661894d219292A6",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "decimals": 6,
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi"
+      ]
+    },
+    {
+      "chainId": 651940,
+      "address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "name": "Wrapped Ether",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "wrapped"
+      ]
+    },
+    {
+      "chainId": 11155111,
+      "address": "0x6cAEfA7446E967018330cCeC5BA7A43956a45137",
+      "name": "Truth Network Token (Sepolia)",
+      "symbol": "TRUU",
+      "decimals": 10,
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "tags": [
+        "defi",
+        "bridge"
+      ]
+    }
+  ]
 }
