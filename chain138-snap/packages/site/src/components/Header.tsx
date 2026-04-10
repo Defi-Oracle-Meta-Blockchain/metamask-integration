@@ -129,7 +129,7 @@ export const Header = ({
           <SnapLogo color={theme.colors.icon?.default} size={30} />
           <Brand>
             <Title>Chain 138 Snap</Title>
-            <BrandSubtitle>The Defi Oracle Meta Explorer</BrandSubtitle>
+            <BrandSubtitle>Chain 138 Explorer by DBIS</BrandSubtitle>
           </Brand>
         </LogoWrapper>
         <RightContainer>

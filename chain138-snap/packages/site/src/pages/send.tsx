@@ -18,7 +18,7 @@ const CHAIN_138_PARAMS = {
   chainName: 'DeFi Oracle Meta Mainnet',
   nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   rpcUrls: ['https://rpc-http-pub.d-bis.org'],
-  blockExplorerUrls: ['https://explorer.d-bis.org'],
+  blockExplorerUrls: ['https://explorer.d-bis.org', 'https://blockscout.defi-oracle.io'],
 };
 
 const Container = styled.div`

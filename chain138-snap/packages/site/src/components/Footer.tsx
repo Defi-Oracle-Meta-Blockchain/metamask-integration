@@ -83,16 +83,16 @@ export const Footer = () => {
       </PoweredByButton>
       <LegalColumn>
         <SectionTitle>Explorer</SectionTitle>
-        <FooterLink href="https://explorer.d-bis.org/docs.html">
+        <FooterLink href="/docs">
           Documentation
         </FooterLink>
-        <FooterLink href="https://explorer.d-bis.org/privacy.html">
+        <FooterLink href="/privacy.html">
           Privacy Policy
         </FooterLink>
-        <FooterLink href="https://explorer.d-bis.org/terms.html">
+        <FooterLink href="/terms.html">
           Terms of Service
         </FooterLink>
-        <FooterLink href="https://explorer.d-bis.org/acknowledgments.html">
+        <FooterLink href="/acknowledgments.html">
           Acknowledgments
         </FooterLink>
         <FooterLink href="mailto:support@d-bis.org">
@@ -100,7 +100,7 @@ export const Footer = () => {
         </FooterLink>
       </LegalColumn>
       <VersionSpan title="Copyright">
-        © {currentYear} Solace Bank Group PLC
+        © {currentYear} DBIS / Defi Oracle
       </VersionSpan>
       {buildVersion ? (
         <VersionSpan title="Build version">v{buildVersion}</VersionSpan>

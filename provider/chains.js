@@ -26,7 +26,7 @@ export const CHAINS = [
       'https://rpc2.d-bis.org',
       'https://rpc.defi-oracle.io',
     ],
-    blockExplorerUrls: ['https://explorer.d-bis.org'],
+    blockExplorerUrls: ['https://explorer.d-bis.org', 'https://blockscout.defi-oracle.io'],
     iconUrls: [
       'https://raw.githubusercontent.com/ethereum/ethereum.org/main/static/images/eth-diamond-black.png',
     ],

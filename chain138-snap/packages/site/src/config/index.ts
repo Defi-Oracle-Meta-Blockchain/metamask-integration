@@ -9,7 +9,8 @@ export const getSnapApiBaseUrl = (): string =>
   '';
 
 /**
- * Public origin of the Snap companion site (e.g. https://explorer.d-bis.org).
+ * Public origin of the Snap companion site (e.g. https://blockscout.defi-oracle.io
+ * or https://explorer.d-bis.org).
  * Set GATSBY_SNAP_SITE_URL so "Send on Chain 138" link is absolute HTTPS and never redirects to HTTP.
  */
 export const getSnapSiteUrl = (): string =>
