@@ -27,4 +27,11 @@ export interface OraclePriceResult {
   updatedAt: Date
   decimals: number
   roundId?: number
+  /** Chain 138: which feed answered (mock, legacy aggregator, or proxy) */
+  feedAddress?: string
+}
+
+export interface AssetUsdHint {
+  usd: number
+  source: string
 }

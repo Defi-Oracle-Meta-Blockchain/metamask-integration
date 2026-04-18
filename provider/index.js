@@ -22,7 +22,9 @@ export {
   ORACLES_CHAIN_138,
   ORACLES_MAINNET,
   ORACLE_ABI,
+  CHAIN138_STABLE_USD_1,
   getEthUsdPrice,
+  getAssetUsdPrice,
   getOracleConfig,
 } from './oracles.js'
 

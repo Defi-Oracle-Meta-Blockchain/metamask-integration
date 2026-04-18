@@ -10,7 +10,7 @@
 
 This repository contains all MetaMask integration components for ChainID 138, including:
 - Network configuration
-- Token lists
+- Token lists (**`config/token-list.json`** mirrors the parent repo **`token-lists/lists/dbis-138.tokenlist.json`**; live apps typically use **`https://explorer.d-bis.org/api/config/token-list`** for the multichain DUAL list)
 - Price feed integration
 - **Smart Accounts Kit integration** ✅
 - Documentation
