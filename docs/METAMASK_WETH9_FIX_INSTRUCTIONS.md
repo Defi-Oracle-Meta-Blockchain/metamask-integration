@@ -27,7 +27,7 @@ Since the contract's `decimals()` function is incorrect, you need to manually sp
 ### Step-by-Step Instructions
 
 1. **Open MetaMask**
-   - Make sure you're connected to "Defi Oracle Meta Mainnet" (ChainID 138)
+   - Make sure you're connected to "DeFi Oracle Meta Mainnet" (ChainID 138)
 
 2. **Go to Import Tokens**
    - Click on the token list (where you see "Wrapped Ether")

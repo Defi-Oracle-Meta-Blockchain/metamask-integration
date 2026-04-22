@@ -3,7 +3,7 @@
 **Date**: $(date)  
 **Issue**: MetaMask displaying "6,000,000,000.0T WETH" instead of "6 WETH"  
 **Contract**: WETH9 (`0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`)  
-**Network**: Defi Oracle Meta Mainnet (ChainID 138)
+**Network**: DeFi Oracle Meta Mainnet (ChainID 138)
 
 ---
 
@@ -147,7 +147,7 @@ If WETH9 cannot be fixed, consider:
    - Should verify actual ETH balance
    - May be another display formatting issue
 
-2. **Network Name**: "Defi Oracle Meta Mainnet"
+2. **Network Name**: "DeFi Oracle Meta Mainnet"
    - This is ChainID 138
    - Network configuration appears correct
 
