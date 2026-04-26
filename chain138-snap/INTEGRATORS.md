@@ -50,4 +50,4 @@ For the companion site (this repo’s `packages/site`):
 
 ## RPC methods
 
-See [TESTING_INSTRUCTIONS.md](TESTING_INSTRUCTIONS.md) for the full list: `hello`, `get_networks`, `get_chain138_config`, `get_chain138_market_chains`, `get_token_list`, `get_token_list_url`, `get_oracles`, `show_dynamic_info`, `get_market_summary`, `show_market_data`, `get_bridge_routes`, `show_bridge_routes`, `get_swap_quote`, `show_swap_quote`.
+See [TESTING_INSTRUCTIONS.md](TESTING_INSTRUCTIONS.md) for the full list: `hello`, `get_networks`, `get_chain138_config`, `get_chain138_market_chains`, `get_token_list`, `get_token_list_url`, `get_oracles`, `show_dynamic_info`, `get_market_summary`, `get_current_price`, `get_historical_price`, `get_pricing_context`, `show_market_data`, `get_bridge_routes`, `show_bridge_routes`, `get_swap_quote`, `show_swap_quote`.

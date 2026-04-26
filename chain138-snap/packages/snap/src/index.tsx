@@ -22,6 +22,8 @@ export type SnapRpcParams = {
   toChain?: number;
   /** For get_token_mapping (resolve): token address on source chain to resolve to destination */
   address?: string;
+  /** For historical pricing requests */
+  timestamp?: string;
   /**
    *
    */
@@ -121,6 +123,14 @@ async function fetchNetworks(apiBase: string) {
       }[];
     }[];
   }>;
+}
+
+async function fetchJson<T>(url: string): Promise<T> {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}`);
+  }
+  return res.json() as Promise<T>;
 }
 
 /**
@@ -574,6 +584,119 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
               ? error.message
               : 'Failed to fetch market summary',
           tokens: [],
+        };
+      }
+    }
+
+    case 'get_current_price': {
+      if (!base) {
+        return {
+          error:
+            'Pass apiBaseUrl (token-aggregation service URL) to fetch current price',
+        };
+      }
+      const chainIdParam = params?.chainId ?? 138;
+      const address = typeof params?.address === 'string' ? params.address.trim() : '';
+      if (!address) {
+        return { error: 'Missing params: address' };
+      }
+      try {
+        const data = await fetchJson<{
+          token?: {
+            pricing?: {
+              priceUsd?: number;
+              asOf?: string;
+              sourceLayer?: string;
+              stale?: boolean;
+            };
+            market?: {
+              lastUpdated?: string;
+            };
+          };
+        }>(`${base}/api/v1/tokens/${address}?chainId=${String(chainIdParam)}`);
+        return {
+          chainId: chainIdParam,
+          address,
+          priceUsd: data.token?.pricing?.priceUsd,
+          asOf: data.token?.pricing?.asOf ?? data.token?.market?.lastUpdated,
+          sourceLayer: data.token?.pricing?.sourceLayer,
+          stale: data.token?.pricing?.stale,
+        };
+      } catch (error) {
+        return {
+          error:
+            error instanceof Error
+              ? error.message
+              : 'Failed to fetch current price',
+        };
+      }
+    }
+
+    case 'get_historical_price': {
+      if (!base) {
+        return {
+          error:
+            'Pass apiBaseUrl (token-aggregation service URL) to fetch historical price',
+        };
+      }
+      const chainIdParam = params?.chainId ?? 138;
+      const address = typeof params?.address === 'string' ? params.address.trim() : '';
+      const timestamp = typeof params?.timestamp === 'string' ? params.timestamp.trim() : '';
+      if (!address || !timestamp) {
+        return { error: 'Missing params: address, timestamp' };
+      }
+      try {
+        const url = new URL(`${base}/api/v1/tokens/${address}/price-at`);
+        url.searchParams.set('chainId', String(chainIdParam));
+        url.searchParams.set('timestamp', timestamp);
+        const data = await fetchJson<{
+          chainId: number;
+          tokenAddress: string;
+          requestedTimestamp: string;
+          effectiveTimestamp?: string;
+          priceUsd?: number;
+          source: string;
+        }>(url.toString());
+        return {
+          ...data,
+          address,
+          historical: data.source.startsWith('ohlcv_') || data.source === 'swap_event',
+        };
+      } catch (error) {
+        return {
+          error:
+            error instanceof Error
+              ? error.message
+              : 'Failed to fetch historical price',
+        };
+      }
+    }
+
+    case 'get_pricing_context': {
+      if (!base) {
+        return {
+          error:
+            'Pass apiBaseUrl (token-aggregation service URL) to fetch pricing context',
+        };
+      }
+      const chainIdParam = params?.chainId ?? 138;
+      const address = typeof params?.address === 'string' ? params.address.trim() : '';
+      if (!address) {
+        return { error: 'Missing params: address' };
+      }
+      try {
+        const url = new URL(`${base}/api/v1/tokens/${address}/pricing-context`);
+        url.searchParams.set('chainId', String(chainIdParam));
+        if (typeof params?.timestamp === 'string' && params.timestamp.trim()) {
+          url.searchParams.set('timestamp', params.timestamp.trim());
+        }
+        return await fetchJson(url.toString());
+      } catch (error) {
+        return {
+          error:
+            error instanceof Error
+              ? error.message
+              : 'Failed to fetch pricing context',
         };
       }
     }

@@ -51,6 +51,9 @@ For **market data**, **swap quotes**, and **bridge routes**, the dApp must pass 
 | `get_oracles`                              | Oracles config.                                                |
 | `show_dynamic_info`                        | In-Snap dialog with networks and token list URL.               |
 | `get_market_summary` / `show_market_data`  | Tokens and USD prices.                                         |
+| `get_current_price`                        | Current USD price snapshot for one token.                      |
+| `get_historical_price`                     | Point-in-time USD valuation for one token at a timestamp.      |
+| `get_pricing_context`                      | Combined current and historical pricing response.              |
 | `get_bridge_routes` / `show_bridge_routes` | CCIP and Trustless bridge routes.                              |
 | `get_swap_quote` / `show_swap_quote`       | Swap quote (requires `tokenIn`, `tokenOut`, `amountIn`).       |
 
