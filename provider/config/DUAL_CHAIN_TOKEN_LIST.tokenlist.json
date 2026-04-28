@@ -1,9 +1,9 @@
 {
-  "name": "Multi-Chain Token List (13 chains, 138 base)",
+  "name": "DBIS Multi Chain Tokens",
   "version": {
     "major": 1,
     "minor": 3,
-    "patch": 4
+    "patch": 5
   },
   "timestamp": "2026-04-04T04:23:46.263Z",
   "logoURI": "https://raw.githubusercontent.com/Order-of-Hospitallers/proxmox-cp/main/token-lists/logos/gru/chain138-list.svg",
@@ -15,17 +15,41 @@
     "wallet"
   ],
   "tags": {
+    "stablecoin": {
+      "name": "Stablecoin",
+      "description": "Stable value tokens pegged to fiat"
+    },
     "defi": {
       "name": "DeFi",
       "description": "Decentralized Finance tokens"
     },
-    "bridge": {
-      "name": "Bridge",
-      "description": "Tokens bridged to other chains such as Truth Network"
+    "compliant": {
+      "name": "Compliant",
+      "description": "Regulatory compliant assets"
     },
     "wrapped": {
       "name": "Wrapped",
-      "description": "Wrapped tokens representing native assets"
+      "description": "Wrapped tokens representing assets"
+    },
+    "fiat": {
+      "name": "Fiat",
+      "description": "Fiat referenced tokens"
+    },
+    "cash": {
+      "name": "Cashlike",
+      "description": "Cash reserve or cash rail assets"
+    },
+    "gru": {
+      "name": "GRU",
+      "description": "GRU transport assets"
+    },
+    "iso4217w": {
+      "name": "ISO4217W",
+      "description": "ISO 4217 compliant wrapped fiat tokens"
+    },
+    "commodity": {
+      "name": "Commodity",
+      "description": "Commodity referenced tokens"
     },
     "oracle": {
       "name": "Oracle",
@@ -35,17 +59,9 @@
       "name": "Price Feed",
       "description": "Price feed oracle tokens"
     },
-    "stablecoin": {
-      "name": "Stablecoin",
-      "description": "Stable value tokens pegged to fiat"
-    },
-    "compliant": {
-      "name": "Compliant",
-      "description": "Regulatory compliant assets"
-    },
-    "iso4217w": {
-      "name": "ISO4217W",
-      "description": "ISO 4217 compliant wrapped fiat tokens"
+    "bridge": {
+      "name": "Bridge",
+      "description": "Tokens bridged to other chains such as Truth Network"
     }
   },
   "extensions": {
@@ -65,8 +81,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -79,8 +111,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -93,8 +141,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -107,8 +171,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -121,8 +201,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -135,8 +231,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -149,8 +261,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -163,8 +291,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -177,8 +321,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -191,8 +351,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 1,
@@ -204,8 +380,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 1,
@@ -217,8 +407,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 1,
@@ -230,7 +434,16 @@
       "tags": [
         "stablecoin",
         "defi"
-      ]
+      ],
+      "extensions": {
+        "category": "stablecoin",
+        "instrument": "crypto-collateralized-stablecoin",
+        "currency": "USD",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "crypto-collateral",
+        "walletClass": "stablecoin-token"
+      }
     },
     {
       "chainId": 1,
@@ -278,8 +491,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 1,
@@ -290,8 +516,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 1,
@@ -303,7 +542,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 10,
@@ -316,8 +563,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -330,8 +593,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -344,8 +623,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -358,8 +653,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -372,8 +683,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -386,8 +713,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -400,8 +743,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -414,8 +773,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -428,8 +803,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -442,8 +833,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 10,
@@ -455,8 +862,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 10,
@@ -468,8 +889,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 10,
@@ -481,7 +916,16 @@
       "tags": [
         "stablecoin",
         "defi"
-      ]
+      ],
+      "extensions": {
+        "category": "stablecoin",
+        "instrument": "crypto-collateralized-stablecoin",
+        "currency": "USD",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "crypto-collateral",
+        "walletClass": "stablecoin-token"
+      }
     },
     {
       "chainId": 10,
@@ -505,8 +949,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 10,
@@ -517,8 +974,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 10,
@@ -530,7 +1000,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 25,
@@ -541,8 +1019,25 @@
       "logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
       "tags": [
         "stablecoin",
-        "iso4217w"
-      ]
+        "iso4217w",
+        "defi",
+        "fiat",
+        "cash",
+        "compliant",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUD",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -553,8 +1048,25 @@
       "logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
       "tags": [
         "stablecoin",
-        "iso4217w"
-      ]
+        "iso4217w",
+        "defi",
+        "fiat",
+        "cash",
+        "compliant",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCAD",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -565,8 +1077,25 @@
       "logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
       "tags": [
         "stablecoin",
-        "iso4217w"
-      ]
+        "iso4217w",
+        "defi",
+        "fiat",
+        "cash",
+        "compliant",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHF",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -579,8 +1108,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -593,8 +1138,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -607,8 +1168,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -621,8 +1198,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -635,8 +1228,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -649,8 +1258,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -663,8 +1288,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -677,8 +1318,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -691,8 +1348,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -705,8 +1378,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -718,8 +1407,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 25,
@@ -731,8 +1434,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 25,
@@ -743,8 +1460,25 @@
       "logoURI": "https://ipfs.io/ipfs/QmPh16PY241zNtePyeK7ep1uf1RcARV2ynGAuRU8U7sSqS",
       "tags": [
         "stablecoin",
-        "iso4217w"
-      ]
+        "iso4217w",
+        "defi",
+        "fiat",
+        "cash",
+        "compliant",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEUR",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -755,8 +1489,25 @@
       "logoURI": "https://ipfs.io/ipfs/QmT2nJ6WyhYBCsYJ6NfS1BPAqiGKkCEuMxiC8ye93Co1hF",
       "tags": [
         "stablecoin",
-        "iso4217w"
-      ]
+        "iso4217w",
+        "defi",
+        "fiat",
+        "cash",
+        "compliant",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBP",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -767,8 +1518,25 @@
       "logoURI": "https://ipfs.io/ipfs/Qmb9JmuD9ehaQtTLBBZmAoiAbvE53e3FMjkEty8rvbPf9K",
       "tags": [
         "stablecoin",
-        "iso4217w"
-      ]
+        "iso4217w",
+        "defi",
+        "fiat",
+        "cash",
+        "compliant",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPY",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -792,20 +1560,46 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 25,
-      "address": "0x66e4286603D22FF153A6547700f37C7Eae42F8E2",
+      "address": "0x66e428c3f67a68878562e79A0234c1F83c208770",
       "name": "Tether USD",
       "symbol": "USDT",
       "decimals": 6,
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 25,
@@ -816,8 +1610,25 @@
       "logoURI": "https://ipfs.io/ipfs/QmNPq4D5JXzurmi9jAhogVMzhAQRk1PZ1r9H3qQUV9gjDm",
       "tags": [
         "stablecoin",
-        "iso4217w"
-      ]
+        "iso4217w",
+        "defi",
+        "fiat",
+        "cash",
+        "compliant",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSD",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 25,
@@ -829,7 +1640,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 25,
@@ -841,7 +1660,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 56,
@@ -854,8 +1681,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -868,8 +1711,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -882,8 +1741,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -896,8 +1771,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -910,8 +1801,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -924,8 +1831,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -938,8 +1861,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -952,8 +1891,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -966,8 +1921,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -980,8 +1951,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 56,
@@ -993,8 +1980,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 56,
@@ -1006,8 +2007,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 56,
@@ -1019,7 +2034,16 @@
       "tags": [
         "stablecoin",
         "defi"
-      ]
+      ],
+      "extensions": {
+        "category": "stablecoin",
+        "instrument": "crypto-collateralized-stablecoin",
+        "currency": "USD",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "crypto-collateral",
+        "walletClass": "stablecoin-token"
+      }
     },
     {
       "chainId": 56,
@@ -1043,8 +2067,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 56,
@@ -1055,8 +2092,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 56,
@@ -1068,7 +2118,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 100,
@@ -1081,8 +2139,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1095,8 +2169,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1109,8 +2199,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1123,8 +2229,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1137,8 +2259,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1151,8 +2289,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1165,8 +2319,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1179,8 +2349,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1193,8 +2379,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1207,8 +2409,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 100,
@@ -1220,8 +2438,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 100,
@@ -1233,8 +2465,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 100,
@@ -1246,7 +2492,16 @@
       "tags": [
         "stablecoin",
         "defi"
-      ]
+      ],
+      "extensions": {
+        "category": "stablecoin",
+        "instrument": "crypto-collateralized-stablecoin",
+        "currency": "USD",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "crypto-collateral",
+        "walletClass": "stablecoin-token"
+      }
     },
     {
       "chainId": 100,
@@ -1270,8 +2525,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 100,
@@ -1282,8 +2550,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 100,
@@ -1295,7 +2576,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 137,
@@ -1308,8 +2597,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1322,8 +2627,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1336,8 +2657,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1350,8 +2687,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1364,8 +2717,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1378,8 +2747,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1392,8 +2777,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1406,8 +2807,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1420,8 +2837,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1434,8 +2867,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 137,
@@ -1447,8 +2896,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 137,
@@ -1460,8 +2923,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 137,
@@ -1473,7 +2950,16 @@
       "tags": [
         "stablecoin",
         "defi"
-      ]
+      ],
+      "extensions": {
+        "category": "stablecoin",
+        "instrument": "crypto-collateralized-stablecoin",
+        "currency": "USD",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "crypto-collateral",
+        "walletClass": "stablecoin-token"
+      }
     },
     {
       "chainId": 137,
@@ -1497,8 +2983,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 137,
@@ -1509,8 +3008,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 137,
@@ -1522,7 +3034,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 138,
@@ -1534,8 +3054,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1547,8 +3082,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1560,8 +3110,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1573,8 +3138,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1586,8 +3166,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1599,8 +3194,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1612,8 +3222,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1625,8 +3250,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1638,8 +3278,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1651,8 +3306,23 @@
       "tags": [
         "stablecoin",
         "defi",
-        "compliant"
-      ]
+        "compliant",
+        "fiat",
+        "cash",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -1663,11 +3333,21 @@
       "logoURI": "https://explorer.d-bis.org/token-icons/cXAUC.png",
       "tags": [
         "defi",
-        "compliant"
+        "compliant",
+        "gru",
+        "commodity"
       ],
       "extensions": {
-        "unitOfAccount": "troy_ounce",
-        "unitDescription": "1 full token (10^decimals base units) = 1 troy oz fine gold"
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
       }
     },
     {
@@ -1679,11 +3359,21 @@
       "logoURI": "https://explorer.d-bis.org/token-icons/cXAUT.png",
       "tags": [
         "defi",
-        "compliant"
+        "compliant",
+        "gru",
+        "commodity"
       ],
       "extensions": {
-        "unitOfAccount": "troy_ounce",
-        "unitDescription": "1 full token (10^decimals base units) = 1 troy oz fine gold"
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
       }
     },
     {
@@ -1720,8 +3410,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 138,
@@ -1732,8 +3435,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 138,
@@ -1745,7 +3461,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 138,
@@ -1757,7 +3481,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 1111,
@@ -1768,8 +3500,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 1111,
@@ -1780,8 +3525,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 8453,
@@ -1794,8 +3552,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1808,8 +3582,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1822,8 +3612,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1836,8 +3642,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1850,8 +3672,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1864,8 +3702,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1878,8 +3732,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1892,8 +3762,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1906,8 +3792,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1920,8 +3822,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 8453,
@@ -1933,8 +3851,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 8453,
@@ -1946,8 +3878,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 8453,
@@ -1959,7 +3905,16 @@
       "tags": [
         "stablecoin",
         "defi"
-      ]
+      ],
+      "extensions": {
+        "category": "stablecoin",
+        "instrument": "crypto-collateralized-stablecoin",
+        "currency": "USD",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "crypto-collateral",
+        "walletClass": "stablecoin-token"
+      }
     },
     {
       "chainId": 8453,
@@ -1983,8 +3938,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 8453,
@@ -1995,8 +3963,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 8453,
@@ -2008,7 +3989,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 42161,
@@ -2021,8 +4010,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2035,8 +4040,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2049,8 +4070,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2063,8 +4100,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2077,8 +4130,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2091,8 +4160,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2105,8 +4190,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2119,8 +4220,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2133,8 +4250,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2147,8 +4280,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 42161,
@@ -2160,8 +4309,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 42161,
@@ -2173,8 +4336,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 42161,
@@ -2186,7 +4363,16 @@
       "tags": [
         "stablecoin",
         "defi"
-      ]
+      ],
+      "extensions": {
+        "category": "stablecoin",
+        "instrument": "crypto-collateralized-stablecoin",
+        "currency": "USD",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "crypto-collateral",
+        "walletClass": "stablecoin-token"
+      }
     },
     {
       "chainId": 42161,
@@ -2210,8 +4396,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 42161,
@@ -2222,8 +4421,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 42161,
@@ -2235,7 +4447,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 42220,
@@ -2259,8 +4479,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 42220,
@@ -2271,8 +4504,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 42220,
@@ -2284,7 +4530,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 43114,
@@ -2297,8 +4551,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "AUD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cAUDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2311,8 +4581,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CAD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCADC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2325,8 +4611,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "CHF",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cCHFC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2339,8 +4641,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2353,8 +4671,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "EUR",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cEURT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2367,8 +4701,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2381,8 +4731,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "GBP",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cGBPT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2395,8 +4761,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "JPY",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cJPYC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2409,8 +4791,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2423,8 +4821,24 @@
         "stablecoin",
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "fiat",
+        "cash",
+        "gru",
+        "iso4217w"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 43114,
@@ -2436,8 +4850,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUC",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 43114,
@@ -2449,8 +4877,22 @@
       "tags": [
         "defi",
         "compliant",
-        "wrapped"
-      ]
+        "wrapped",
+        "gru",
+        "commodity"
+      ],
+      "extensions": {
+        "category": "commodity-token",
+        "instrument": "commodity-referenced-token",
+        "settlement": "commodity",
+        "cashLike": false,
+        "backing": "commodity-reserves",
+        "gruVersion": "v1",
+        "gruFamily": "cXAUT",
+        "walletClass": "token",
+        "commodity": "gold",
+        "unit": "troy_ounce"
+      }
     },
     {
       "chainId": 43114,
@@ -2462,7 +4904,16 @@
       "tags": [
         "stablecoin",
         "defi"
-      ]
+      ],
+      "extensions": {
+        "category": "stablecoin",
+        "instrument": "crypto-collateralized-stablecoin",
+        "currency": "USD",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "crypto-collateral",
+        "walletClass": "stablecoin-token"
+      }
     },
     {
       "chainId": 43114,
@@ -2486,8 +4937,21 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 43114,
@@ -2498,8 +4962,21 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token"
+      }
     },
     {
       "chainId": 43114,
@@ -2511,7 +4988,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 651940,
@@ -2522,8 +5007,22 @@
       "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token",
+        "bridge": "AlltraAdapter:cUSDC->USDC"
+      }
     },
     {
       "chainId": 651940,
@@ -2534,8 +5033,22 @@
       "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
       "tags": [
         "stablecoin",
-        "defi"
-      ]
+        "defi",
+        "fiat",
+        "cash"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "x402Ready": false,
+        "fwdCanon": false,
+        "walletClass": "cash-like-token",
+        "bridge": "AlltraAdapter:cUSDT->USDT"
+      }
     },
     {
       "chainId": 651940,
@@ -2547,7 +5060,15 @@
       "tags": [
         "defi",
         "wrapped"
-      ]
+      ],
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      }
     },
     {
       "chainId": 11155111,

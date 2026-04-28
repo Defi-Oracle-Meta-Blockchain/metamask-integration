@@ -3,7 +3,7 @@
   "version": {
     "major": 1,
     "minor": 2,
-    "patch": 0
+    "patch": 1
   },
   "timestamp": "2026-01-26T00:00:00.000Z",
   "tokens": [
@@ -13,7 +13,8 @@
       "name": "ETH/USD Price Feed",
       "symbol": "ETH-USD",
       "decimals": 8,
-      "logoURI": "https://ipfs.io/ipfs/QmPZuycjyJEe2otREuQ5HirvPJ8X6Yc6MBtwz1VhdD79pY"
+      "logoURI": "https://ipfs.io/ipfs/QmPZuycjyJEe2otREuQ5HirvPJ8X6Yc6MBtwz1VhdD79pY",
+      "tags": []
     },
     {
       "chainId": 138,
@@ -21,7 +22,16 @@
       "name": "Wrapped Ether",
       "symbol": "WETH",
       "decimals": 18,
-      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong"
+      "logoURI": "https://ipfs.io/ipfs/Qma3FKtLce9MjgJgWbtyCxBiPjJ6xi8jGWUSKNS5Jc2ong",
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      },
+      "tags": []
     },
     {
       "chainId": 138,
@@ -29,7 +39,16 @@
       "name": "Wrapped Ether v10",
       "symbol": "WETH",
       "decimals": 18,
-      "logoURI": "https://ipfs.io/ipfs/QmanDFPHxnbKd6SSNzzXHf9GbpL9dLXSphxDZSPPYE6ds4"
+      "logoURI": "https://ipfs.io/ipfs/QmanDFPHxnbKd6SSNzzXHf9GbpL9dLXSphxDZSPPYE6ds4",
+      "extensions": {
+        "category": "wrapped-native",
+        "instrument": "wrapped-native",
+        "settlement": "crypto-native",
+        "cashLike": false,
+        "backing": "native-gas-asset",
+        "walletClass": "token"
+      },
+      "tags": []
     },
     {
       "chainId": 138,
@@ -37,7 +56,27 @@
       "name": "Compliant Tether USD",
       "symbol": "cUSDT",
       "decimals": 6,
-      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP"
+      "logoURI": "https://ipfs.io/ipfs/QmRfhPs9DcyFPpGjKwF6CCoVDWUHSxkQR34n9NK7JSbPCP",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "fiat",
+        "cash",
+        "compliant",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDT",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     },
     {
       "chainId": 138,
@@ -45,7 +84,53 @@
       "name": "Compliant USD Coin",
       "symbol": "cUSDC",
       "decimals": 6,
-      "logoURI": "https://ipfs.io/ipfs/QmNPq4D5JXzurmi9jAhogVMzhAQRk1PZ1r9H3qQUV9gjDm"
+      "logoURI": "https://ipfs.io/ipfs/QmNPq4D5JXzurmi9jAhogVMzhAQRk1PZ1r9H3qQUV9gjDm",
+      "tags": [
+        "stablecoin",
+        "defi",
+        "fiat",
+        "cash",
+        "compliant",
+        "gru"
+      ],
+      "extensions": {
+        "category": "tokenized-fiat",
+        "instrument": "emoney-or-fiat-backed-stablecoin",
+        "currency": "USD",
+        "settlement": "fiat",
+        "cashLike": true,
+        "backing": "cash,cash-equivalents",
+        "gruVersion": "v1",
+        "gruFamily": "cUSDC",
+        "x402Ready": false,
+        "fwdCanon": false
+      }
     }
-  ]
+  ],
+  "tags": {
+    "stablecoin": {
+      "name": "Stablecoin",
+      "description": "Stable value tokens pegged to fiat"
+    },
+    "defi": {
+      "name": "DeFi",
+      "description": "Decentralized Finance tokens"
+    },
+    "fiat": {
+      "name": "Fiat",
+      "description": "Fiat referenced tokens"
+    },
+    "cash": {
+      "name": "Cashlike",
+      "description": "Cash reserve or cash rail assets"
+    },
+    "compliant": {
+      "name": "Compliant",
+      "description": "Regulatory compliant assets"
+    },
+    "gru": {
+      "name": "GRU",
+      "description": "GRU transport assets"
+    }
+  }
 }
