@@ -85,7 +85,7 @@ The companion site passes `apiBaseUrl` from **GATSBY_SNAP_API_BASE_URL** at **bu
 
 1. **If you build with `GATSBY_SNAP_API_BASE_URL=https://explorer.d-bis.org`**  
    Then **explorer.d-bis.org** must expose the token‑aggregation API. The explorer’s normal Blockscout/Go APIs do **not** implement `/api/v1/networks`, `/api/v1/tokens`, `/api/v1/quote`, etc. You must either:
-   - **Deploy the token‑aggregation service** (from `smom-dbis-138/services/token-aggregation`) and **proxy** its routes under `https://explorer.d-bis.org/api/v1/...`. On the explorer VM (VMID 5000), run **`explorer-monorepo/scripts/apply-nginx-token-aggregation-proxy.sh`** (or ensure the nginx config includes a `location /api/v1/` proxy to the token‑aggregation port, e.g. 3000). The script **`fix-nginx-conflicts-vmid5000.sh`** in the same repo already adds this proxy when applied.
+   - **Deploy the token‑aggregation service** (from `smom-dbis-138/services/token-aggregation`) and **proxy** its routes under `https://explorer.d-bis.org/api/v1/...`. On the explorer VM (VMID 5000), run **`explorer-monorepo/scripts/apply-nginx-token-aggregation-proxy.sh`** (default upstream **3001**; set `TOKEN_AGG_PORT=3000` for local-style installs) or ensure the nginx config includes a `location /api/v1/` proxy before the broader `location /api/`. The script **`fix-nginx-conflicts-vmid5000.sh`** in the same repo applies the full template (HTTP + HTTPS) when used.
    - Or use a **separate API host** (see below).
 
 2. **If the token‑aggregation service runs elsewhere** (e.g. `https://api.d-bis.org` or an internal URL):  

@@ -151,8 +151,8 @@ Live shape:
       "explorer": {
         "chainId": 138,
         "explorerBaseUrl": "https://explorer.d-bis.org",
-        "addressUrl": "https://explorer.d-bis.org/address/0x...",
-        "tokenUrl": "https://explorer.d-bis.org/address/0x..."
+        "addressUrl": "https://explorer.d-bis.org/addresses/0x...",
+        "tokenUrl": "https://explorer.d-bis.org/addresses/0x..."
       }
     }
   ]
