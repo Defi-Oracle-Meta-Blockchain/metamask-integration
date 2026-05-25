@@ -96,7 +96,7 @@
         "gru"
       ],
       "extensions": {
-        "category": "tokenized-fiat",
+        "category": "gru-emoney",
         "instrument": "emoney-or-fiat-backed-stablecoin",
         "currency": "USD",
         "settlement": "fiat",
@@ -105,7 +105,13 @@
         "gruVersion": "v1",
         "gruFamily": "cUSDT",
         "x402Ready": false,
-        "fwdCanon": false
+        "fwdCanon": false,
+        "assetClass": "Cash & Equivalents",
+        "assetGroup": "MMF / Repo",
+        "instrumentType": "eMoney",
+        "underlying": "USD",
+        "gruLayer": "M1",
+        "rwaEligible": false
       }
     },
     {
@@ -127,7 +133,7 @@
         "gru"
       ],
       "extensions": {
-        "category": "tokenized-fiat",
+        "category": "gru-emoney",
         "instrument": "emoney-or-fiat-backed-stablecoin",
         "currency": "USD",
         "settlement": "fiat",
@@ -136,7 +142,13 @@
         "gruVersion": "v2",
         "gruFamily": "cUSDT",
         "x402Ready": true,
-        "fwdCanon": true
+        "fwdCanon": true,
+        "assetClass": "Cash & Equivalents",
+        "assetGroup": "MMF / Repo",
+        "instrumentType": "eMoney",
+        "underlying": "USD",
+        "gruLayer": "M1",
+        "rwaEligible": false
       }
     },
     {
@@ -155,7 +167,7 @@
         "gru"
       ],
       "extensions": {
-        "category": "tokenized-fiat",
+        "category": "gru-emoney",
         "instrument": "emoney-or-fiat-backed-stablecoin",
         "currency": "USD",
         "settlement": "fiat",
@@ -164,7 +176,13 @@
         "gruVersion": "v1",
         "gruFamily": "cUSDC",
         "x402Ready": false,
-        "fwdCanon": false
+        "fwdCanon": false,
+        "assetClass": "Cash & Equivalents",
+        "assetGroup": "MMF / Repo",
+        "instrumentType": "eMoney",
+        "underlying": "USD",
+        "gruLayer": "M1",
+        "rwaEligible": false
       }
     },
     {
@@ -186,7 +204,7 @@
         "gru"
       ],
       "extensions": {
-        "category": "tokenized-fiat",
+        "category": "gru-emoney",
         "instrument": "emoney-or-fiat-backed-stablecoin",
         "currency": "USD",
         "settlement": "fiat",
@@ -195,7 +213,13 @@
         "gruVersion": "v2",
         "gruFamily": "cUSDC",
         "x402Ready": true,
-        "fwdCanon": true
+        "fwdCanon": true,
+        "assetClass": "Cash & Equivalents",
+        "assetGroup": "MMF / Repo",
+        "instrumentType": "eMoney",
+        "underlying": "USD",
+        "gruLayer": "M1",
+        "rwaEligible": false
       }
     },
     {
@@ -482,11 +506,10 @@
       "tags": [
         "defi",
         "compliant",
-        "gru",
-        "commodity"
+        "gru"
       ],
       "extensions": {
-        "category": "commodity-token",
+        "category": "gru-emoney",
         "instrument": "commodity-referenced-token",
         "settlement": "commodity",
         "cashLike": false,
@@ -495,7 +518,13 @@
         "gruFamily": "cXAUC",
         "walletClass": "token",
         "commodity": "gold",
-        "unit": "troy_ounce"
+        "unit": "troy_ounce",
+        "assetClass": "Commodities",
+        "assetGroup": "Precious Metals",
+        "instrumentType": "eMoney",
+        "underlying": "Gold",
+        "gruLayer": "M1",
+        "rwaEligible": false
       }
     },
     {
@@ -508,11 +537,10 @@
       "tags": [
         "defi",
         "compliant",
-        "gru",
-        "commodity"
+        "gru"
       ],
       "extensions": {
-        "category": "commodity-token",
+        "category": "gru-emoney",
         "instrument": "commodity-referenced-token",
         "settlement": "commodity",
         "cashLike": false,
@@ -521,7 +549,13 @@
         "gruFamily": "cXAUT",
         "walletClass": "token",
         "commodity": "gold",
-        "unit": "troy_ounce"
+        "unit": "troy_ounce",
+        "assetClass": "Commodities",
+        "assetGroup": "Precious Metals",
+        "instrumentType": "eMoney",
+        "underlying": "Gold",
+        "gruLayer": "M1",
+        "rwaEligible": false
       }
     },
     {
